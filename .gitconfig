@@ -1,0 +1,46 @@
+[user]
+	name = Tim Gossett
+	email = tim@mrgossett.com
+	signingkey = 08D3CCF0
+[credential]
+	helper = osxkeychain
+[init]
+	templatedir = ~/.git_template
+[push]
+	default = current
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore
+	autocrlf = input
+[color]
+	ui = auto
+[mergetool]
+	keepBackup = true
+[push]
+	default = simple
+[merge]
+	tool = vim
+[commit]
+	template = ~/.gitmessage
+	gpgsign = true
+[fetch]
+	prune = true
+[alias]
+	a = add --all
+	ap = add --patch
+	ca = commit --amend
+	c = commit -v
+	co = checkout
+	d = diff
+	ds = diff --staged
+	f = fetch
+	s = status
+	trim = "!sh -c 'git branch --merged | grep  -v \"\\*\\|master\\|production\" | xargs -n1 git branch -d'"
+[url "git@github.com:MrGossett"]
+	insteadOf = https://github.com/MrGossett
+[url "git@github.com:mlcloud"]
+	insteadOf = https://github.com/mlcloud
+[status]
+	submoduleSummary = true
+[diff]
+	submodule = log

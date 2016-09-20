@@ -1,0 +1,1 @@
+add-auto-load-safe-path $GOROOT/src/pkg/runtime/runtime-gdb.py
