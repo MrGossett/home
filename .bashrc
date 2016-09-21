@@ -1,6 +1,6 @@
 export CDPATH="."
 
-. $HOME/.bash/*.sh
+for file in ~/.bash/*.sh; do source $file; done
 
 . $HOME/.bash/gitcomplete.sh
 alias g="git "
