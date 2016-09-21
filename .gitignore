@@ -32,3 +32,6 @@ code/
 .ssh/*
 !.ssh/config
 .vim/plugged/
+node_modules
+.Trash
+.aws/cli/
