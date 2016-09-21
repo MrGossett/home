@@ -1,7 +1,7 @@
 complete -C aws_completer aws
 
 function aws-profile() {
-  profiles=$(cat ~/.aws/credentials | grep '\[' | tr -d '[]')
+  profiles=$(cat ~/.aws/config | grep '\[' | tr -d '[]' | cut -f 2 -d ' ')
   if [[ -z "$1" || "$profiles" != *"$1"* ]]; then
     echo -n "Available profiles:"
     echo $profiles | perl -pe "s/( |^)/\n  /g"
