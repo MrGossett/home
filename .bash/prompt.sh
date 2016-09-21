@@ -77,11 +77,14 @@ function prompt_command() {
   # git branch
   if $(git rev-parse -q HEAD >/dev/null 2>&1); then
     branch=$(git rev-parse --abbrev-ref HEAD)
-    ps1+="${Grey}git:"
+    slug=$(git remote get-url --push origin)
+    slug=${slug/git@github.com:/}
+    slug=${slug/.git/}
+    ps1+="${Grey}${slug}"
     if [[ "$branch" == "HEAD" ]]; then
       branch="$(git rev-parse --short HEAD)"
     fi
-    ps1+="${branch}${Reset} "
+    ps1+=":${branch}${Reset} "
     # upstream
     # tracking
     # local
