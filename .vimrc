@@ -60,7 +60,8 @@ set cursorline
 
 autocmd BufWritePre <buffer> :%s/\s\+$//e " remove trailing whitespace when writing
 filetype plugin indent on
+set sw=2 ts=2 et
 autocmd FileType sh,ruby,html,json,yaml setlocal sw=2 ts=2 et
-autocmd FileType go setlocal sw=4 ts=4 noet
+autocmd FileType go,sshconfig setlocal sw=4 ts=4 noet
 autocmd FileType dockerfile setlocal sw=8 ts=8 noet
 
