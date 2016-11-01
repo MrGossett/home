@@ -14,7 +14,7 @@ function aws-profile() {
 
 function aws-env() {
   export AWS_DEFAULT_REGION="$(aws configure get region)"
-  export AWS_REGION="${AWS_DEFAULT_PROFILE}"
+  export AWS_REGION="${AWS_DEFAULT_REGION}"
 
   # optimistically fetch values using `aws configure` cli
   id=$(aws configure get aws_access_key_id)
