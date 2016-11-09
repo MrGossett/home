@@ -35,7 +35,6 @@
 	ds = diff --staged
 	f = fetch
 	s = status
-	trim = "!sh -c 'git branch --merged | grep  -v \"\\*\\|master\\|production\" | xargs -n1 git branch -d'"
 [url "git@github.com:MrGossett"]
 	insteadOf = https://github.com/MrGossett
 [url "git@github.com:mlcloud"]
