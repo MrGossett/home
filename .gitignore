@@ -39,3 +39,4 @@ node_modules
 .CFUserTextEncoding
 .vim/.netrwhist
 .node_repl_history
+.gpg-agent-info
