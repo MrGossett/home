@@ -37,8 +37,9 @@
 	s = status
 [url "git@github.com:MrGossett"]
 	insteadOf = https://github.com/MrGossett
-[url "git@github.com:mlcloud"]
+[url "git@bitbucket.org:mlcloud"]
 	insteadOf = https://github.com/mlcloud
+	insteadOf = https://bitbucket.org/mlcloud
 [status]
 	submoduleSummary = true
 [diff]
