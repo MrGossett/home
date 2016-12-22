@@ -4,8 +4,6 @@
 	signingkey = 08D3CCF0
 [credential]
 	helper = osxkeychain
-[init]
-	templatedir = ~/.git_template
 [push]
 	default = current
 [core]
