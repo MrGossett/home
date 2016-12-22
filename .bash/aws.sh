@@ -43,3 +43,44 @@ function aws-env() {
 function aws-unset() {
   unset $(env | grep AWS | grep -v PROFILE | cut -f 1 -d '=' | xargs)
 }
+
+function aws-private-dns() {
+  [ -z $1 ] && echo "usage: $0 <name-filter>" && return 1
+  aws ec2 describe-instances \
+    --filters Name=tag:Name,Values=$1 \
+    --query "Reservations[].Instances[0].PrivateDnsName" \
+    --output text
+}
+function aws-get-hosts() {
+  [ -z $1 ] && echo "usage: $0 <name-filter> <prefix>" && return 1
+  [ -z $2 ] && echo "usage: $0 <name-filter> <prefix>" && return 1
+
+  # make sure known_hosts exists
+  touch ~/.ssh/known_hosts
+
+  # get a list of instance IDs
+  instances=$(
+    aws ec2 describe-instances \
+      --filters Name=tag:Name,Values=$1 \
+      --query 'Reservations[].Instances[].{ID: InstanceId}' \
+      --output text
+  )
+
+  # make a copy of the current known_hosts
+  cp ~/.ssh/{known,old}_hosts
+
+  # for each instance, find the lines in console output showing the host's
+  # ssh key. prepend each line with 'jump.hybris*' and add the lines to
+  # known_hosts
+  for i in $instances; do
+    aws ec2 get-console-output --instance-id "$i" --query 'Output' --output text |\
+      sed "/BEGIN SSH HOST KEY KEYS/,/END SSH HOST KEY KEYS/!d; /^---/d; s/^/$2* /" \
+      >> ~/.ssh/known_hosts
+  done
+
+  # sort known_hosts in-place
+  sort -u -o ~/.ssh/known_hosts ~/.ssh/known_hosts
+
+  # show what changed
+  diff -B ~/.ssh/{old,known}_hosts
+}
