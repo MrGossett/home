@@ -46,12 +46,13 @@ Plug 'scrooloose/nerdcommenter'
 
 call plug#end()
 
-color twilight256
+color monochrome
 
-let &colorcolumn=join(range(81,999),",")
-highlight ColorColumn ctermbg=234
-highlight LineNr ctermfg=234
-highlight CursorLineNr ctermfg=237
+let &colorcolumn=81
+hi ColorColumn ctermbg=233
+hi LineNr ctermfg=24
+hi CursorLineNr ctermfg=22
+hi CursorLine cterm=NONE ctermbg=233
 
 set number
 set relativenumber
