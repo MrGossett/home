@@ -58,7 +58,7 @@ Plug 'roman/golden-ratio'
 Plug 'scrooloose/nerdcommenter'
 
 call plug#end()
-color monochrome
+color mrg256
 " red-on-red for anything past col 80
 hi OverLength ctermbg=52 ctermfg=124
 match OverLength /\%81v.\+/
@@ -66,10 +66,6 @@ match OverLength /\%81v.\+/
 set number
 set relativenumber
 set cursorline
-hi LineNr ctermfg=24
-hi CursorLineNr ctermfg=22
-hi CursorLine ctermbg=233
-
 set noshowmode
 set backspace=2
 set laststatus=2
