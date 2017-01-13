@@ -17,6 +17,3 @@ function use-machine() {
   eval $(docker-machine env $1)
 }
 
-alias dc="docker-compose"
-alias dm="docker-machine"
-alias dk="docker"
