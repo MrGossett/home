@@ -38,6 +38,8 @@ bins="${GOPATH//://bin:}/bin"
 # append GOPATH to CDPATH, with /src/github.com
 # this allows `cd MrGossett` to act like `cd ~/go/src/github.com/MrGossett`
 export CDPATH="${CDPATH+$CDPATH:}${GOPATH//://src/github.com:}/src/github.com"
+# same for bitbucket.org
+export CDPATH="$CDPATH:${GOPATH//://src/bitbucket.org:}/src/bitbucket.org"
 
 # make sure godoc is always running
 (godoc -http=:6060 2>/dev/null &)
