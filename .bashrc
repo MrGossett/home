@@ -1,8 +1,9 @@
 export CDPATH="."
 
-for file in ~/.bash/*.sh; do source $file; done
+while read f; do
+  source $f
+done < <(find "$HOME/.bash" -type f -name '*.sh')
 
-. $HOME/.bash/gitcomplete.sh
 alias g="git "
 __git_complete g __git_main
 
