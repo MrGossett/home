@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 function install-go() {
   local GO_VERSION=1.6
   mkdir -p /usr/local/src/go

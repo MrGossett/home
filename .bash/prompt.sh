@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 function __is_interactive_shell {
   if [ -n "$SSH_CLIENT" ] && [ -n "$SSH_TTY" ]; then
     return 0
