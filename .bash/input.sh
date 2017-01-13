@@ -1,5 +1,6 @@
-set colored-stats
-set completion-ignore-case
-set completion-map-case
-set mark-symlinked-directories
-set skip-completed-text
+set colored-stats on
+set completion-ignore-case on
+set completion-map-case on
+set enable-bracketed-paste on
+set mark-symlinked-directories on
+set skip-completed-text on
