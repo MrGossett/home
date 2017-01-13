@@ -1,17 +1,19 @@
 function install-go() {
-  local GO_VERSION=1.6
+  local version=${1:-1.7}
   mkdir -p /usr/local/src/go
 
-  git clone --branch release-branch.go1.4 --depth 1 git@github.com:golang/go.git /usr/local/src/go/1.4
-  (
-    cd /usr/local/src/go/1.4/src
-    ./make.bash
-  )
+  [ -d "/usr/local/src/go/$version" ] && \
+    echo "Go $version is already installed" >&2 && \
+    return 1
 
-  git clone --branch "release-branch.go$GO_VERSION" --depth 1 git@github.com:golang/go.git "/usr/local/src/go/$GO_VERSION"
+  [ ! -d /usr/local/src/go/1.4 ] && install-go "1.4"
+
+  git clone --branch "release-branch.go$version" --depth 1 \
+    git@github.com:golang/go.git "/usr/local/src/go/$version"
   (
-    cd "/usr/local/src/go/${GO_VERSION}/src"
-    GOROOT_BOOTSTRAP=/usr/local/src/go/1.4 ./make.bash
+    cd "/usr/local/src/go/${version}/src"
+    [[ "$version" > "1.4" ]] && export GOROOT_BOOTSTRAP=/usr/local/src/go/1.4
+    ./make.bash
   ) 
 }
 
