@@ -28,8 +28,9 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
 " Markdown
-Plug 'tpope/vim-markdown'
-let g:markdown_fenced_languages = ['html', 'bash=sh', 'go', 'json']
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+let g:vim_markdown_fenced_languages = ['bash=sh']
 au FileType markdown setlocal tw=80
 
 Plug 'wannesm/wmgraphviz.vim'
