@@ -51,6 +51,7 @@ let g:terraform_fmt_on_save = 1
 
 " don't make me think
 Plug 'chiel92/vim-autoformat'
+au BufWrite *.json :Autoformat
 Plug 'tpope/vim-surround'
 Plug 'AutoClose'
 Plug 'ciaranm/detectindent'
