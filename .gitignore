@@ -42,3 +42,4 @@ node_modules
 .gpg-agent-info
 .cups
 .config
+.node-gyp
