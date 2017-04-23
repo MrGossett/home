@@ -37,15 +37,9 @@ function prompt_command() {
   Green="\[$(tput setaf 2)\]"
   Blue="\[$(tput setaf 4)\]"
   LightBlue="\[$(tput setaf 4)\]"
-  Purple="\[$(tput setaf 5)\]"
-  Grey="\[$(tput setaf 8)\]"
+  Purple="\[$(tput setaf 13)\]"
+  Grey="\[$(tput setaf 10)\]"
   Reset="\[$(tput sgr0)\]"
-  if [[ "$(tput colors)" == "256" ]]; then
-    Blue="\[$(tput setaf 27)\]"
-    DarkRed="\[$(tput setaf 52)\]"
-    LightBlue="\[$(tput setaf 67)\]"
-    Purple="\[$(tput setaf 54)\]"
-  fi
 
   # newline after last command's output to kick off prompt
   local ps1="\n"
@@ -65,12 +59,12 @@ function prompt_command() {
 
   # Docker Machine name
   if [[ -n "$DOCKER_MACHINE_NAME" ]]; then
-    ps1+="${DarkRed}dm:$DOCKER_MACHINE_NAME${Reset} "
+    ps1+="${Grey}dm:$DOCKER_MACHINE_NAME${Reset} "
   fi
 
   # AWS profile
   if [[ -n "$AWS_DEFAULT_PROFILE" ]]; then
-    ps1+="${DarkRed}aws:${AWS_DEFAULT_PROFILE}${Reset} "
+    ps1+="${Grey}aws:${AWS_DEFAULT_PROFILE}${Reset} "
   fi
 
   ## git info
