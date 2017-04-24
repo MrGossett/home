@@ -10,12 +10,17 @@ function aws-profile() {
     export AWS_DEFAULT_PROFILE="$1"
     export AWS_PROFILE="$1"
     export AWS_EB_PROFILE="$1"
+    aws-region
   fi
 }
 
-function aws-env() {
+function aws-region() {
   export AWS_DEFAULT_REGION="$(aws configure get region)"
   export AWS_REGION="${AWS_DEFAULT_REGION}"
+}
+
+function aws-env() {
+  aws-region
 
   # optimistically fetch values using `aws configure` cli
   id=$(aws configure get aws_access_key_id)
@@ -42,7 +47,7 @@ function aws-env() {
 }
 
 function aws-unset() {
-  unset $(env | grep AWS | grep -v PROFILE | cut -f 1 -d '=' | xargs)
+  unset $(env | grep AWS | egrep -v '(PROFILE|REGION)' | cut -f 1 -d '=' | xargs)
 }
 
 function aws-private-dns() {
