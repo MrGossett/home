@@ -103,12 +103,15 @@ set laststatus=2
 set ignorecase
 set incsearch
 set hlsearch
-set clipboard=unnamed " use system pasteboard
-
+if $TMUX == ''
+  set clipboard=unnamed " use system pasteboard
+endif
 au BufWritePre <buffer> :%s/\s\+$//e " remove trailing whitespace on save
 filetype plugin indent on
 set sw=2 ts=2 et " globally use 2-spacewidth expanded tabs
 au FileType sshconfig setlocal sw=4 ts=4 noet
+
+au BufRead,BufNewFile ~/.aws setlocal ft=cfg
 
 set spell spelllang=en_us
 
