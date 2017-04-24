@@ -43,3 +43,4 @@ node_modules
 .cups
 .config
 .node-gyp
+.pwntools-cache/
