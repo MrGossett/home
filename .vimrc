@@ -6,16 +6,12 @@ Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 let g:airline_theme='solarized'
 
-Plug 'bling/vim-bufferline'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline_powerline_fonts = 1
-
 Plug 'mattn/gist-vim'
 Plug 'airblade/vim-gitgutter'
 au FileType gitcommit set tw=72 " auto-wrap git commits at col 72
 
 Plug 'tmux-plugins/vim-tmux'
+Plug 'edkolev/tmuxline.vim'
 
 " color theme
 Plug 'flazz/vim-colorschemes'
@@ -25,10 +21,10 @@ let g:solarized_termtrans = 1
 Plug 'Valloric/YouCompleteMe', {'for': 'go'}
 Plug 'fatih/vim-go'
 let g:go_fmt_command = "goimports"
-let g:go_metalinter_autosave = 1
-let g:go_metalinter_autosave_enabled = ['vet', 'golint']
-let g:go_auto_type_info = 1
-let g:go_auto_sameids = 1
+" let g:go_metalinter_autosave = 1
+" let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+" let g:go_auto_type_info = 1
+" let g:go_auto_sameids = 1
 let g:go_gocode_unimported_packages = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
@@ -36,8 +32,7 @@ let g:go_highlight_fields = 1
 let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
-au FileType go autocmd BufWritePre <buffer> Fmt
-let g:syntastic_go_gofmt_s = 1
+" let g:syntastic_go_gofmt_s = 1
 
 
 " Markdown
