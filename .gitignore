@@ -44,3 +44,5 @@ node_modules
 .config
 .node-gyp
 .pwntools-cache/
+.m2
+.oracle_jre_usage
