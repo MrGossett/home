@@ -48,6 +48,7 @@ let g:go_highlight_build_constraints = 1
 " be the last wordbender
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-commentary'
 
 " don't make me think
 au FileType json setlocal sw=2 ts=2 et
@@ -99,9 +100,7 @@ set laststatus=2
 set ignorecase
 set incsearch
 set hlsearch
-if $TMUX == ''
-  set clipboard=unnamed " use system pasteboard
-endif
+set clipboard=unnamed " use system pasteboard
 au BufWritePre <buffer> :%s/\s\+$//e " remove trailing whitespace on save
 filetype plugin indent on
 set sw=2 ts=2 et " globally use 2-spacewidth expanded tabs
