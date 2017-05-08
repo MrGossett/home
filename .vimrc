@@ -7,6 +7,7 @@ Plug 'vim-airline/vim-airline-themes'
 " looks best when the Terminal's color scheme is modified to be Solarized
 let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 " Plug 'mattn/gist-vim'
 " Plug 'airblade/vim-gitgutter'
@@ -53,7 +54,6 @@ Plug 'tpope/vim-commentary'
 " don't make me think
 au FileType json setlocal sw=2 ts=2 et
 
-Plug 'AutoClose'
 " Plug 'ciaranm/detectindent'
 " Plug 'nathanaelkane/vim-indent-guides'
 Plug 'roman/golden-ratio'
@@ -88,6 +88,7 @@ match OverLength /\%81v.\+/
 set number
 set relativenumber
 set cursorline
+hi iCursor ctermfg=1
 hi CursorLineNr ctermbg=none
 hi LineNr ctermbg=none
 hi GitGutterAdd ctermbg=none ctermfg=2
