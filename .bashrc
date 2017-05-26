@@ -1,8 +1,6 @@
 export CDPATH="."
 
-while read f; do
-  source $f
-done < <(find "$HOME/.bash" -type f -name '*.sh')
+eval "$(find "$HOME/.bash" -type f -name '*.sh' | sed 's/^/source /')"
 
 alias g="git "
 __git_complete g __git_main
