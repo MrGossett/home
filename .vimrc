@@ -65,11 +65,45 @@ Plug 'docker/docker', {'for': 'dockerfile'}
 au FileType dockerfile setlocal sw=8 ts=8 noet tw=80
 
 Plug 'hashivim/vim-terraform'
+Plug 'vim-syntastic/syntastic'
+Plug 'juliosueiras/vim-terraform-completion'
 au FileType tf setlocal sw=2 ts=2 et
 let g:terraform_fmt_on_save = 1
+let g:tagbar_type_terraform = {
+	\ 'ctagstype' : 'terraform',
+	\ 'kinds' : [
+		\ 'r:Resources',
+		\ 'd:Datas',
+		\ 'v:Variables',
+		\ 'p:Providers',
+		\ 'o:Outputs',
+		\ 'm:Modules',
+		\ 'f:TFVars'
+	\ ],
+	\ 'sort' : 1
+\ }
+
+" Syntastic Config
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" (Optional)Remove Info(Preview) window
+set completeopt-=preview
+
+" (Optional)Hide Info(Preview) window after completions
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+" (Optional) Enable terraform plan to be include in filter
+let g:syntastic_terraform_tf_filter_plan = 1
 
 " others
-" Plug 'vim-syntastic/syntastic'
 " Plug 'myint/syntastic-extras'
 " let g:syntastic_cfg_checkers = ['cfg']
 " let g:syntastic_make_checkers = ['gnumake']
@@ -88,13 +122,7 @@ match OverLength /\%81v.\+/
 set number
 set relativenumber
 set cursorline
-hi iCursor ctermfg=1
-hi CursorLineNr ctermbg=none
 hi LineNr ctermbg=none
-hi GitGutterAdd ctermbg=none ctermfg=2
-hi GitGutterChange ctermbg=none ctermfg=3
-hi GitGutterDelete ctermbg=none ctermfg=1
-hi GitGutterChangeDelete ctermbg=none ctermfg=1
 set noshowmode
 set backspace=2
 set laststatus=2
