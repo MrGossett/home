@@ -71,9 +71,16 @@ function prompt_command() {
   # git branch
   if $(git rev-parse -q HEAD >/dev/null 2>&1); then
     branch=$(git rev-parse --abbrev-ref HEAD)
-    slug=$(git remote get-url --push origin)
-    slug=${slug/git@github.com:/}
-    slug=${slug/.git/}
+    upstream=$(git config --get branch.$branch.remote)
+    slug=$(git remote get-url --push $upstream)
+    slug=${slug#ssh://}
+    slug=${slug#https://}
+    slug=${slug#git@}
+    slug=${slug#github.com}
+    slug=${slug#bitbucket.org}
+    slug=${slug#:}
+    slug=${slug#/}
+    slug=${slug%.git}
     ps1+="${Grey}${slug}"
     if [[ "$branch" == "HEAD" ]]; then
       branch="$(git rev-parse --short HEAD)"
