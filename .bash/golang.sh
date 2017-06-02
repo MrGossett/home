@@ -1,6 +1,6 @@
 # find all subdirectories of /usr/local/src/go, reverse-sort, and join with :
 export GOPATH=$(
-  find /usr/local/src/go -type d -depth 1 | sort -r | xargs printf "%s:"
+  find /usr/local/src/go -type d -name '1.*' | sort -r | xargs printf "%s:"
 )
 
 # set GOROOT to the first dir in GOPATH (should be the latest version of go)

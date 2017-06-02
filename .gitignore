@@ -47,3 +47,4 @@ node_modules
 .m2
 .oracle_jre_usage
 .yarnrc
+.account

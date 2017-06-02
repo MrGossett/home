@@ -91,7 +91,7 @@ function prompt_command() {
     # local
   fi
   ps1+="${Reset}\n"
-  ps1+="${LightBlue}${PWD/$HOME/\~}${Grey} \$ ${Reset}"
+  ps1+="${LightBlue}${PWD/$HOME/~}${Grey} \$ ${Reset}"
 
   export PS1="$ps1"
 }
