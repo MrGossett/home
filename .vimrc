@@ -4,10 +4,9 @@ call plug#begin('~/.vim/plugged')
 " chrome
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" looks best when the Terminal's color scheme is modified to be Solarized
-let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+Plug 'flazz/vim-colorschemes'
 
 " Plug 'mattn/gist-vim'
 " Plug 'airblade/vim-gitgutter'
@@ -17,10 +16,6 @@ au FileType gitcommit set tw=72 " auto-wrap git commits at col 72
 
 Plug 'tmux-plugins/vim-tmux', {'for': 'tmux'}
 Plug 'edkolev/tmuxline.vim'
-
-" color theme
-Plug 'flazz/vim-colorschemes'
-let g:solarized_termtrans = 1 " let vim bg fall through to Terminal bg
 
 " Golang
 Plug 'Valloric/YouCompleteMe', {'for': 'go'}
@@ -113,7 +108,7 @@ let g:syntastic_terraform_tf_filter_plan = 1
 
 call plug#end()
 
-color solarized
+colorscheme jellybeans
 
 " subtle hint for anything past col 80
 hi OverLength ctermbg=0
@@ -122,7 +117,9 @@ match OverLength /\%81v.\+/
 set number
 set relativenumber
 set cursorline
-hi LineNr ctermbg=none
+hi Normal ctermbg=NONE
+hi CursorLineNr term=bold cterm=NONE ctermfg=LightGrey ctermbg=NONE
+hi LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE
 set noshowmode
 set backspace=2
 set laststatus=2
