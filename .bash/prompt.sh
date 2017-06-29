@@ -88,10 +88,7 @@ prompt_command() {
     # local
   fi
   ps1="$ps1${Reset}\n"
-  dir="$PWD"
-  if [ "$PWD" = "$HOME" ]; then
-    dir="~"
-  fi
+  dir="$( printf '%s' "$PWD" | sed "s;^$HOME;~;")"
   ps1="$ps1\[$(tput setaf 238)\]$dir \[$(tput setaf 236)\]\$ ${Reset}"
 
   export PS1="$ps1"
