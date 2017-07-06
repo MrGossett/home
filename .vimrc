@@ -111,13 +111,12 @@ call plug#end()
 colorscheme jellybeans
 
 " subtle hint for anything past col 80
-hi OverLength ctermbg=0
+hi OverLength ctermbg=0 ctermfg=1
 match OverLength /\%81v.\+/
 " line numbers with styling
 set number
 set relativenumber
 set cursorline
-hi Normal ctermbg=NONE
 hi CursorLineNr term=bold cterm=NONE ctermfg=LightGrey ctermbg=NONE
 hi LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE
 set noshowmode
