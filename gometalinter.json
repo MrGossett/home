@@ -1,8 +1,6 @@
 {
   "Cyclo": 15,
   "Deadline": "15m",
-  "Vendor": true,
-  "VendoredLinters": true,
   "Enable": [
     "aligncheck",
     "deadcode",
