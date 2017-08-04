@@ -1,3 +1,47 @@
+" plugins
+call plug#begin('~/.vim/plugged')
+
+" chrome
+Plug 'roman/golden-ratio'
+Plug 'flazz/vim-colorschemes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
+" Tmux
+Plug 'tmux-plugins/vim-tmux', {'for': 'tmux'}
+Plug 'edkolev/tmuxline.vim'
+
+" Golang
+Plug 'fatih/vim-go', {'for': 'go'}
+let g:go_fmt_command = "goimports"
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_deadline = "10s"
+let g:go_metalinter_enabled = ['aligncheck', 'deadcode', 'errcheck', 'gas', 'goconst', 'gocyclo', 'gofmt', 'goimports', 'golint', 'gosimple', 'gotype', 'ineffassign', 'interfacer', 'staticcheck', 'structcheck', 'unconvert', 'varcheck', 'vet', 'vetshadow']
+let g:go_gocode_unimported_packages = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+" Terraform
+Plug 'hashivim/vim-terraform', {'for': ['tf', 'terraform', 'tfvars']}
+Plug 'juliosueiras/vim-terraform-completion', {'for': ['tf', 'terraform', 'tfvars']}
+let g:terraform_fmt_on_save = 1
+
+" Docker
+Plug 'docker/docker', {'for': 'dockerfile'}
+
+" be the last wordbender
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-commentary'
+
+call plug#end()
+
 " welcome to the new millenium
 set nocompatible
 
@@ -57,49 +101,4 @@ function! XTermPasteBegin()
   return ""
 endfunction
 
-" plugins
-call plug#begin('~/.vim/plugged')
-
-" chrome
-Plug 'roman/golden-ratio'
-Plug 'flazz/vim-colorschemes'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-
-" Tmux
-Plug 'tmux-plugins/vim-tmux', {'for': 'tmux'}
-Plug 'edkolev/tmuxline.vim'
-
-" Golang
-Plug 'fatih/vim-go', {'for': 'go'}
-let g:go_fmt_command = "goimports"
-let g:go_metalinter_autosave = 1
-let g:go_metalinter_deadline = "10s"
-let g:go_metalinter_enabled = ['aligncheck', 'deadcode', 'errcheck', 'gas', 'goconst', 'gocyclo', 'gofmt', 'goimports', 'golint', 'gosimple', 'gotype', 'ineffassign', 'interfacer', 'staticcheck', 'structcheck', 'unconvert', 'varcheck', 'vet', 'vetshadow']
-let g:go_gocode_unimported_packages = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_types = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-
-" Terraform
-Plug 'hashivim/vim-terraform', {'for': ['tf', 'tfvars']}
-Plug 'juliosueiras/vim-terraform-completion', {'for': ['tf', 'tfvars']}
-let g:terraform_fmt_on_save = 1
-
-" Docker
-Plug 'docker/docker', {'for': 'dockerfile'}
-
-" be the last wordbender
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-commentary'
-
-call plug#end()
-
 colorscheme jellybeans
-
