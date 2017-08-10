@@ -48,6 +48,8 @@ set nocompatible
 " enable syntax and plugins
 syntax enable
 filetype plugin on
+set fdm=syntax
+set foldlevelstart=20
 
 " Search down into subfolders. Provides tab-completion for all file-related tasks
 set path+=**
