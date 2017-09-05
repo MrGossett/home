@@ -32,6 +32,11 @@ Plug 'hashivim/vim-terraform', {'for': ['tf', 'terraform', 'tfvars']}
 Plug 'juliosueiras/vim-terraform-completion', {'for': ['tf', 'terraform', 'tfvars']}
 let g:terraform_fmt_on_save = 1
 
+" Python
+Plug 'scrooloose/syntastic', {'for': 'python'}
+Plug 'nvie/vim-flake8', {'for': 'python'}
+let python_highlight_all=1
+
 " Docker
 Plug 'docker/docker', {'for': 'dockerfile'}
 
@@ -50,6 +55,11 @@ syntax enable
 filetype plugin on
 set fdm=syntax
 set foldlevelstart=20
+
+" pretty-print JSON
+function! JSONFmt()
+:%!python -m json.tool
+endfunction
 
 " Search down into subfolders. Provides tab-completion for all file-related tasks
 set path+=**
@@ -87,11 +97,14 @@ set clipboard=unnamed " use system pasteboard
 set sw=2 ts=2 et
 au FileType dockerfile,go setlocal sw=8 ts=8 noet tw=80
 au FileType tf,json setlocal sw=2 ts=2 et
+au FileType python setlocal sw=4 ts=4 et tw=79 softtabstop=4 autoindent fileformat=unix
 au FileType gitcommit setlocal tw=72
 au FileType sshconfig setlocal sw=4 ts=4 noet
 au FileType cfg setlocal sw=4 ts=4 et
 au BufRead,BufNewFile ~/.aws/config setlocal ft=cfg
 au BufRead,BufNewFile ~/.aws/credentials setlocal ft=cfg
+au BufNewFile,BufRead *.py setlocal ft=python
+
 
 " sane paste
 let &t_SI .= "\<Esc>[?2004h"
