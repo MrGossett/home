@@ -20,7 +20,6 @@ code/
 .docker
 .npm/*
 .gem
-.config/hub
 .bash_sessions
 .bash_history
 .terraform.d
@@ -49,3 +48,4 @@ node_modules
 .yarnrc
 .account
 .python_history
+.aws/config
