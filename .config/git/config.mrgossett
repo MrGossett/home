@@ -1,0 +1,7 @@
+[user]
+	email = tim@mrgossett.com
+	signingkey = tim@mrgossett.com
+[url "git@github.com:MrGossett"]
+	insteadOf = https://github.com/MrGossett
+[core]
+  excludesfile = ~/.config/git/excludes.mrgossett

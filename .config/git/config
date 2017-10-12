@@ -1,0 +1,54 @@
+[user]
+	name = Tim Gossett
+
+[core]
+	editor = vim
+	autocrlf = input ; don't mess with line endings
+
+  ; pull in global excludes. ignores Vim swap files
+	excludesfile = ~/.config/git/excludes
+
+[merge]
+	tool = vim ; use vim to resolve merge conflicts
+
+[commit]
+	template = ~/.gitmessage ; template for commit messages
+	gpgSign = true ; always GPG sign commits
+
+[fetch]
+	prune = true
+
+[alias]
+	a = add --all
+	ap = add --patch
+	ca = commit --amend
+	c = commit -v
+	co = checkout
+	d = diff
+	ds = diff --staged
+	f = fetch
+	s = status
+	protected-branches = config --get-all branches.protected
+	protect = config --local --add branches.protected
+	unprotect = config --local --unset branches.protected
+	trim = "!git for-each-ref --format='%(if)%(HEAD)%(then)%(else)%(refname:lstrip=2)%(end)' 'refs/heads/' | grep -v -f <(git protected-branches) | xargs git branch -d"
+[status]
+	submoduleSummary = true
+[diff]
+	submodule = log
+
+; if the GIT_DIR is under /Users, we're probably on an OS X system
+[includeIf "gitdir:/Users/"]  
+  path = ~/.config/git/config.osx
+
+; if the GIT_DIR is directly under HOME, include mrgossett config
+[includeIf "gitdir:~/.git"]
+  path = ~/.config/git/config.mrgossett
+
+; if the GIT_DIR has mrgossett in its path, include mrgossett config  
+[includeIf "gitdir/i:mrgossett/"]
+	path = ~/.config/git/config.mrgossett
+
+; if the GIT_DIR has mlcloud in its path, include mlcloud config
+[includeIf "gitdir:mlcloud/"]
+	path = ~/.config/git/config.mlcloud
