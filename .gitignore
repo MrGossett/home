@@ -49,3 +49,7 @@ node_modules
 .yarnrc
 .account
 .python_history
+.soapuios
+soapui-settings.xml
+SoapUI-Tutorials
+.tor
