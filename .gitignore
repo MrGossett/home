@@ -32,7 +32,7 @@ code/
 .vim/plugged/
 node_modules
 .Trash
-.aws/cli/
+.aws/cli/cache
 .apex
 .CFUserTextEncoding
 .vim/.netrwhist
