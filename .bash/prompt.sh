@@ -60,8 +60,8 @@ prompt_command() {
   fi
 
   # AWS profile
-  if [ -n "$AWS_DEFAULT_PROFILE" ]; then
-    ps1="$ps1\[$(tput setaf 130)\]aws:${AWS_DEFAULT_PROFILE}${Reset} "
+  if [ -n "$AWS_PROFILE" ]; then
+    ps1="$ps1\[$(tput setaf 130)\]aws:${AWS_PROFILE}${Reset} "
   fi
 
   ## git info
