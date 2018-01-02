@@ -103,8 +103,8 @@ au FileType sshconfig setlocal sw=4 ts=4 noet
 au FileType cfg setlocal sw=4 ts=4 et
 au BufRead,BufNewFile ~/.aws/config setlocal ft=cfg
 au BufRead,BufNewFile ~/.aws/credentials setlocal ft=cfg
-au BufNewFile,BufRead *.py setlocal ft=python
-
+au BufRead,BufNewFile *.py setlocal ft=python
+au BufRead,BufNewFile Terrafile setlocal ft=yaml
 
 " sane paste
 let &t_SI .= "\<Esc>[?2004h"
