@@ -53,3 +53,4 @@ node_modules
 soapui-settings.xml
 SoapUI-Tutorials
 .tor
+.npmrc
