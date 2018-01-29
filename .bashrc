@@ -9,3 +9,4 @@ export EDITOR='vim'
 alias v="vim"
 alias l='ls -FGAlh'
 
+complete -C $HOME/go/bin/gocomplete go
