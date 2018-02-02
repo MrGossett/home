@@ -4,4 +4,8 @@
 [url "git@github.com:MrGossett"]
 	insteadOf = https://github.com/MrGossett
 [core]
-  excludesfile = ~/.config/git/excludes.mrgossett
+    excludesfile = ~/.config/git/excludes.mrgossett
+[filter "crypt"]
+    clean = gpg --encrypt --recipient tim@mrgossett.com --armor
+    smudge = gpg -d
+

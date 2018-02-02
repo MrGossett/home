@@ -1,0 +1,2 @@
+.aws/credentials  filter=crypt
+.aws/config  filter=crypt

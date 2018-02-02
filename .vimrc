@@ -101,6 +101,7 @@ au FileType python setlocal sw=4 ts=4 et tw=79 softtabstop=4 autoindent fileform
 au FileType gitcommit setlocal tw=72
 au FileType sshconfig setlocal sw=4 ts=4 noet
 au FileType cfg setlocal sw=4 ts=4 et
+au FileType gitconfig setlocal sw=4 ts=4 noet
 au BufRead,BufNewFile ~/.aws/config setlocal ft=cfg
 au BufRead,BufNewFile ~/.aws/credentials setlocal ft=cfg
 au BufRead,BufNewFile *.py setlocal ft=python

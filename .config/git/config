@@ -19,33 +19,32 @@
 	prune = true
 
 [alias]
-	a = add --all
-	ap = add --patch
-	ca = commit --amend
+	a = add
 	c = commit -v
 	co = checkout
 	d = diff
 	ds = diff --staged
-	f = fetch
 	s = status
 	protected-branches = config --get-all branches.protected
 	protect = config --local --add branches.protected
 	unprotect = config --local --unset branches.protected
 	trim = "!git for-each-ref --format='%(if)%(HEAD)%(then)%(else)%(refname:lstrip=2)%(end)' 'refs/heads/' | grep -v -f <(git protected-branches) | xargs git branch -d"
+
 [status]
 	submoduleSummary = true
+
 [diff]
 	submodule = log
 
 ; if the GIT_DIR is under /Users, we're probably on an OS X system
-[includeIf "gitdir:/Users/"]  
-  path = ~/.config/git/config.osx
+[includeIf "gitdir:/Users/"]
+	path = ~/.config/git/config.osx
 
 ; if the GIT_DIR is directly under HOME, include mrgossett config
 [includeIf "gitdir:~/.git"]
-  path = ~/.config/git/config.mrgossett
+	path = ~/.config/git/config.mrgossett
 
-; if the GIT_DIR has mrgossett in its path, include mrgossett config  
+; if the GIT_DIR has mrgossett in its path, include mrgossett config
 [includeIf "gitdir/i:mrgossett/"]
 	path = ~/.config/git/config.mrgossett
 
