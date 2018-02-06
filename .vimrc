@@ -102,10 +102,13 @@ au FileType gitcommit setlocal tw=72
 au FileType sshconfig setlocal sw=4 ts=4 noet
 au FileType cfg setlocal sw=4 ts=4 et
 au FileType gitconfig setlocal sw=4 ts=4 noet
+au FileType yaml setlocal foldmethod=indent
+au BufRead,BufNewFile ~/.config/git/config* setlocal ft=gitconfig
 au BufRead,BufNewFile ~/.aws/config setlocal ft=cfg
 au BufRead,BufNewFile ~/.aws/credentials setlocal ft=cfg
 au BufRead,BufNewFile *.py setlocal ft=python
 au BufRead,BufNewFile Terrafile setlocal ft=yaml
+au BufRead,BufNewFile *.yml setlocal ft=yaml
 
 " sane paste
 let &t_SI .= "\<Esc>[?2004h"
