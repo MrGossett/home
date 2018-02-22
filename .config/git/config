@@ -25,10 +25,8 @@
 	d = diff
 	ds = diff --staged
 	s = status
-	protected-branches = config --get-all branches.protected
-	protect = config --local --add branches.protected
-	unprotect = config --local --unset branches.protected
-	trim = "!git for-each-ref --format='%(if)%(HEAD)%(then)%(else)%(refname:lstrip=2)%(end)' 'refs/heads/' | grep -v -f <(git protected-branches) | xargs git branch -d"
+	secrets = git-secrets
+	crypt = git-crypt
 
 [status]
 	submoduleSummary = true
