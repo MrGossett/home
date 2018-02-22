@@ -4,8 +4,9 @@
 [core]
 	editor = vim
 	autocrlf = input ; don't mess with line endings
-
-  ; pull in global excludes. ignores Vim swap files
+	hooksPath = ~/.config/git/hooks ; use global hooks
+	
+	; pull in global excludes. ignores Vim swap files
 	excludesfile = ~/.config/git/excludes
 
 [merge]
