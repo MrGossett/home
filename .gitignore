@@ -40,6 +40,7 @@ node_modules
 .cups
 !.config/
 .config/*
+!.config/brew.lock
 !.config/git/
 .node-gyp
 .pwntools-cache/

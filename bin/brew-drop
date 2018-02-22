@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+test -e $HOME/.config/brew.lock && brew leaves | grep -v -f $HOME/.config/brew.lock | xargs -r brew uninstall
