@@ -13,8 +13,6 @@ go1.*/
 code/
 .viminfo
 .bash_history/*
-.aws/credentials
-.aws/config
 .lesshst
 .netrc
 .docker
