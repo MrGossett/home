@@ -1,4 +1,5 @@
 export CDPATH="."
+export PAGER="less"
 
 eval "$(find "$HOME/.bash" -type f -name '*.sh' | sed 's/^/source /')"
 
