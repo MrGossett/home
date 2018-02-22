@@ -5,4 +5,5 @@
 	insteadOf = https://github.com/MrGossett
 [core]
     excludesfile = ~/.config/git/excludes.mrgossett
-
+[secrets]
+	allowed = APKAIPSBA5ODPTWJOUAQ ; AWS CodeCommit identifier
