@@ -68,8 +68,8 @@ prompt_command() {
   # git branch
   if git rev-parse -q HEAD >/dev/null 2>&1; then
     branch=$(git rev-parse --abbrev-ref HEAD)
-    upstream="$(git config --get "branch.$branch.remote")"
-    slug="$(git remote get-url --push "$upstream")"
+    upstream="$(git config --get "branch.$branch.remote" 2>/dev/null)"
+    slug="$(git remote get-url --push "$upstream" 2>/dev/null)"
     slug=${slug#ssh://}
     slug=${slug#https://}
     slug=${slug#git@}
@@ -86,6 +86,8 @@ prompt_command() {
     # upstream
     # tracking
     # local
+  else
+    ps1="$ps1\[$(tput setaf 22)\](no ref)${Reset}"
   fi
   ps1="$ps1${Reset}\n"
   dir="$( printf '%s' "$PWD" | sed "s;^$HOME;~;")"
