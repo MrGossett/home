@@ -1,21 +1,8 @@
-# find all subdirectories of /usr/local/src/go, reverse-sort, and join with :
-export GOPATH=$(
-  find /usr/local/src/go -type d -name '1.*' | sort -r | xargs printf "%s:"
-)
+export GOROOT="$(find $HOME -maxdepth 1 -type d -name 'go1.*' | sort -Vr | head -n1)"
+[ "$PATH" != *"$GOROOT/bin"* ] && export PATH="$GOROOT/bin:$PATH"
 
-# set GOROOT to the first dir in GOPATH (should be the latest version of go)
-export GOROOT="${GOPATH%%:*}"
-
-# prepend ~/go to GOPATH, chomp trailing :
-export GOPATH="$HOME/go:${GOPATH%:}"
-
-# `go install` will put binaries in GOBIN, which we set to the first dir in
-# GOPATH here (i.e., ~/go)
-export GOBIN="${GOPATH%%:*}/bin"
-
-# ensure all of the bin paths are in PATH
-bins="${GOPATH//://bin:}/bin"
-[ "$PATH" != *"$bins"* ] && export PATH="$bins:$PATH"
+export GOPATH="$HOME/go"
+[ "$PATH" != *"$GOPATH/bin"* ] && export PATH="$GOPATH/bin:$PATH"
 
 # append GOPATH to CDPATH, with /src/bitbucket.org
 # this allows `cd MrGossett` to act like `cd ~/go/src/bitbucket.org/MrGossett`
@@ -23,6 +10,3 @@ export CDPATH="${CDPATH+$CDPATH:}${GOPATH//://src/bitbucket.org:}/src/bitbucket.
 
 # same for github.com
 export CDPATH="$CDPATH:${GOPATH//://src/github.com:}/src/github.com"
-
-# make sure godoc is always running
-(godoc -http=:6060 2>/dev/null &)
