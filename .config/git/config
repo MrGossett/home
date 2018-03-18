@@ -58,3 +58,8 @@
 ; if the GIT_DIR has mlcloud in its path, include mlcloud config
 [includeIf "gitdir:mlcloud/"]
 	path = ~/.config/git/config.mlcloud
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
