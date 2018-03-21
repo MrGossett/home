@@ -15,17 +15,33 @@ Plug 'edkolev/tmuxline.vim'
 
 " Golang
 Plug 'fatih/vim-go', {'for': 'go'}
+Plug 'Blackrush/vim-gocode', {'for': 'go'}
+Plug 'buoto/gotests-vim', {'for': 'go'}
 let g:go_fmt_command = "goimports"
 let g:go_metalinter_autosave = 1
 let g:go_metalinter_deadline = "10s"
-let g:go_metalinter_enabled = ['aligncheck', 'deadcode', 'errcheck', 'gas', 'goconst', 'gocyclo', 'gofmt', 'goimports', 'golint', 'gosimple', 'gotype', 'ineffassign', 'interfacer', 'staticcheck', 'structcheck', 'unconvert', 'varcheck', 'vet', 'vetshadow']
+let g:go_metalinter_enabled = ['deadcode', 'errcheck', 'gas', 'goconst', 'gofmt', 'goimports', 'golint', 'gosimple',  'unconvert', 'varcheck', 'vet', 'vetshadow']
 let g:go_gocode_unimported_packages = 1
+let g:go_auto_type_info = 1
+let g:go_updatetime = 100
 let g:go_highlight_functions = 1
+let g:go_highlight_function_arguments = 1
+let g:go_highlight_function_calls = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_types = 1
+let g:go_highlight_extra_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+let g:go_highlight_generate_tags = 1
+let g:go_highlight_string_spellcheck = 1
+let g:go_highlight_format_strings = 1
+let g:go_highlight_variable_declarations = 1
+let g:go_highlight_variable_assignments = 1
+let g:go_statusline_duration = "30s"
+let g:go_list_type = "quickfix"
+let g:go_test_show_name = 1
+let g:go_fold_enable = ['block', 'import', 'varconst', 'package_comment', 'comment']
 
 " Terraform
 Plug 'hashivim/vim-terraform', {'for': ['tf', 'terraform', 'tfvars']}
@@ -44,6 +60,8 @@ Plug 'docker/docker', {'for': 'dockerfile'}
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'SirVer/ultisnips'
 
 call plug#end()
 
@@ -93,9 +111,29 @@ set laststatus=2      " always display a status line
 set smartcase         " case-insensitive search iff search pattern is all lowercase
 set clipboard=unnamed " use system pasteboard
 
+let mapleader = ","
 " file types and indention
 set sw=2 ts=2 et
 au FileType dockerfile,go setlocal sw=8 ts=8 noet tw=80
+au FileType go setlocal autowrite
+" run :GoBuild or :GoTestCompile based on the go file
+function! s:build_go_files()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#test#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
+endfunction
+
+au FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
+au Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+au Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+au Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+au Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 au FileType tf,json setlocal sw=2 ts=2 et
 au FileType python setlocal sw=4 ts=4 et tw=79 softtabstop=4 autoindent fileformat=unix
 au FileType gitcommit setlocal tw=72
@@ -119,5 +157,10 @@ function! XTermPasteBegin()
   set paste
   return ""
 endfunction
+
+" quickfix navigation: ctrl-n for next, ctrl-p for previous.
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <leader>a :cclose<CR>
 
 colorscheme jellybeans
