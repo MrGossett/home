@@ -1,6 +1,9 @@
 export CDPATH="."
 export PAGER="less"
 
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 eval "$(find "$HOME/.bash" -type f -name '*.sh' | sed 's/^/source /')"
 
 alias g="git "
