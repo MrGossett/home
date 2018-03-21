@@ -16,6 +16,7 @@ fzf
 gawk
 git
 git-crypt
+git-lfs
 git-secrets
 gnu-indent
 gnu-sed
@@ -49,6 +50,7 @@ pkg-config
 procmail
 pwntools
 reattach-to-user-namespace
+rem
 rsync
 screen
 shfmt
