@@ -1,5 +1,7 @@
 acmetool
+aircrack-ng
 asciinema
+awscli
 base64
 bash
 cmake
@@ -57,6 +59,7 @@ shfmt
 sipcalc
 spdylay
 speedtest-cli
+stubby
 tcpdump
 the_silver_searcher
 thefuck
