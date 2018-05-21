@@ -1,2 +1,4 @@
 .aws/credentials  filter=git-crypt diff=git-crypt
 .aws/config  filter=git-crypt diff=git-crypt
+.mutt/alias  filter=git-crypt diff=git-crypt
+.mutt/accts/*.muttrc  filter=git-crypt diff=git-crypt

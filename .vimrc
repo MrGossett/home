@@ -139,6 +139,7 @@ au FileType cfg setlocal sw=4 ts=4 et
 au FileType gitconfig setlocal sw=4 ts=4 noet
 au FileType yaml setlocal foldmethod=indent
 au FileType markdown setlocal tw=80
+au FileType mail setlocal tw=72 wrap nocp
 au BufRead,BufNewFile ~/.config/git/config* setlocal ft=gitconfig
 au BufRead,BufNewFile ~/.aws/config setlocal ft=cfg
 au BufRead,BufNewFile ~/.aws/credentials setlocal ft=cfg
