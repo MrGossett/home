@@ -71,6 +71,11 @@ filetype plugin on
 set fdm=syntax
 set foldlevelstart=20
 
+" Spelling
+set spelllang=en_us                         " 'Merica!
+set dictionary+=/usr/share/dict/words       " use standard dictionary
+set spellfile=$HOME/.vim/my-words.utf-8.add " my (public) whitelist
+
 " pretty-print JSON
 function! JSONFmt()
 :%!python -m json.tool
@@ -93,6 +98,16 @@ let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
 " remove trailing whitespace on save
 au BufWritePre <buffer> :%s/\s\+$//e
+
+" spelling hints
+hi clear SpellBad
+hi clear SpellCap
+hi clear SpellRare
+hi clear SpellLocal
+hi SpellBad    ctermfg=9
+hi SpellCap    ctermfg=3    cterm=underline
+hi SpellRare   ctermfg=13   cterm=underline
+hi SpellLocal  cterm=None
 
 " subtle hint for anything past col 80
 hi OverLength ctermbg=0 ctermfg=1
