@@ -2,5 +2,5 @@
 .aws/config  filter=git-crypt diff=git-crypt
 .mutt/alias  filter=git-crypt diff=git-crypt
 .mutt/accts/*.muttrc  filter=git-crypt diff=git-crypt
-.offlineimaprc filter=git-crypt diff=git-crypt
+.offlineimap* filter=git-crypt diff=git-crypt
 .slack-term filter=git-crypt diff=git-crypt
