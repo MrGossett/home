@@ -161,6 +161,7 @@ au BufRead,BufNewFile ~/.aws/credentials setlocal ft=cfg
 au BufRead,BufNewFile *.py setlocal ft=python
 au BufRead,BufNewFile Terrafile setlocal ft=yaml
 au BufRead,BufNewFile *.yml setlocal ft=yaml
+au BufRead,BufNewFile *.muttrc,muttrc setlocal ft=muttrc
 
 " sane paste
 let &t_SI .= "\<Esc>[?2004h"
