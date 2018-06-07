@@ -121,3 +121,4 @@ macro compose \Cg    "Fgpg --clearsign\ny"
 macro compose \Cp    "Fgpg --clearsign\ny^T^Uapplication/pgp; format=text; x-action=sign\n"
 macro compose Y pfy  "send mail without pgp"
 
+set sendmail='oauth2smtp'

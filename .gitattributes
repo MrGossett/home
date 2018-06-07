@@ -4,3 +4,4 @@
 .mutt/accts/*.muttrc  filter=git-crypt diff=git-crypt
 .offlineimaprc  filter=git-crypt diff=git-crypt
 .slack-term filter=git-crypt diff=git-crypt
+.oauth2smtprc filter=git-crypt diff=git-crypt
