@@ -62,18 +62,6 @@ set reverse_name                                                 # reply as whom
 set include                                                      # include message in replies
 set forward_quote                                                # include message in forwards
 set signature="echo Tim |"                                       # thread start (i.e., message not replied)
-set pgp_decode_command="/usr/local/bin/krgpg --status-fd=2 %?p?--passphrase-fd 0? --no-verbose --quiet --batch --output - %f"
-set pgp_verify_command="/usr/local/bin/krgpg --status-fd=2 --no-verbose --quiet --batch --output - --verify %s %f"
-set pgp_decrypt_command="/usr/local/bin/krgpg --status-fd=2 %?p?--passphrase-fd 0? --no-verbose --quiet --batch --output - %f"
-set pgp_sign_command="/usr/local/bin/krgpg --no-verbose --batch --quiet --output - %?p?--passphrase-fd 0? --armor --detach-sign --textmode %?a?-u %a? %f"
-set pgp_clearsign_command="/usr/local/bin/krgpg --no-verbose --batch --quiet --output - %?p?--passphrase-fd 0? --armor --textmode --clearsign %?a?-u %a? %f"
-set pgp_import_command="/usr/local/bin/krgpg --no-verbose --import %f"
-set pgp_export_command="/usr/local/bin/krgpg --no-verbose --export --armor %r"
-set pgp_verify_key_command="/usr/local/bin/krgpg --verbose --batch --fingerprint --check-sigs %r"
-set pgp_list_pubring_command="/usr/local/bin/krgpg --no-verbose --batch --quiet --with-colons --with-fingerprint --with-fingerprint --list-keys %r"
-set pgp_list_secring_command="/usr/local/bin/krgpg --no-verbose --batch --quiet --with-colons --with-fingerprint --with-fingerprint --list-secret-keys %r"
-set pgp_good_sign="^\\[GNUPG:\\] GOODSIG"
-set pgp_decryption_okay="^\\[GNUPG:\\] DECRYPTION_OKAY"
 
 # headers to show
 ignore *                                                         # ignore all headers
@@ -81,6 +69,7 @@ unignore from: to: cc: date: subject:                            # show only the
 hdr_order from: to: cc: date: subject:                           # and in this order
 
 source ~/.mutt/colors.muttrc                                     # source colors file
+source ~/.mutt/gpg.muttrc                                        # source GPG config
 source ~/.mutt/accts/red.muttrc
 
 # these just give me headaches
