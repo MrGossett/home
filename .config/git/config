@@ -1,11 +1,12 @@
 [user]
 	name = Tim Gossett
+	signingkey = 0x52781D38!
 
 [core]
 	editor = vim
 	autocrlf = input ; don't mess with line endings
 	hooksPath = ~/.config/git/hooks ; use global hooks
-	
+
 	; pull in global excludes. ignores Vim swap files
 	excludesfile = ~/.config/git/excludes
 
@@ -63,7 +64,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[gpg]
-	program = /usr/local/bin/krgpg
 [tag]
 	forceSignAnnotated = true
