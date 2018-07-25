@@ -5,3 +5,6 @@
 .offlineimaprc  filter=git-crypt diff=git-crypt
 .slack-term filter=git-crypt diff=git-crypt
 .oauth2smtprc filter=git-crypt diff=git-crypt
+accretion.* filter=git-crypt diff=git-crypt
+.ssh/config filter=git-crypt diff=git-crypt
+.bash/vault.sh filter=git-crypt diff=git-crypt
