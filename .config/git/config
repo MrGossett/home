@@ -1,6 +1,7 @@
 [user]
 	name = Tim Gossett
-	signingkey = 0x52781D38!
+	signingkey = 0x7666BDAF!
+	email = tgossett@magicleap.com
 
 [core]
 	editor = vim
@@ -58,11 +59,7 @@
 
 ; if the GIT_DIR has mlcloud in its path, include mlcloud config
 [includeIf "gitdir:mlcloud/"]
-	path = ~/.config/git/config.mlcloud
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+	path = ~/.config/git/config.red
+
 [tag]
 	forceSignAnnotated = true
