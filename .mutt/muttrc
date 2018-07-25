@@ -49,6 +49,7 @@ set date_format         = "%d-%m-%y at %I:%M%P"
 set realname            = "Tim Gossett"
 set envelope_from                                                # which from?
 set sig_dashes                                                   # dashes before my signature
+set sig_on_top          = yes
 set edit_headers                                                 # show headers when composing
 set fast_reply                                                   # skip to compose when replying
 set fcc_attach                                                   # save attachments with the body
@@ -61,7 +62,7 @@ set reply_to                                                     # reply to Repl
 set reverse_name                                                 # reply as whomever it was to
 set include                                                      # include message in replies
 set forward_quote                                                # include message in forwards
-set signature="echo Tim |"                                       # thread start (i.e., message not replied)
+set signature="printf 'Tim\n\n' |"                               # thread start (i.e., message not replied)
 
 # headers to show
 ignore *                                                         # ignore all headers
