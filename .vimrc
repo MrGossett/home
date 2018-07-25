@@ -9,6 +9,7 @@ Plug 'vim-airline/vim-airline-themes'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline_powerline_fonts = 1
+Plug 'tpope/vim-fugitive'
 
 " Tmux
 Plug 'tmux-plugins/vim-tmux', {'for': 'tmux'}
@@ -45,6 +46,9 @@ Plug 'hashivim/vim-terraform', {'for': ['tf', 'terraform', 'tfvars']}
 Plug 'juliosueiras/vim-terraform-completion', {'for': ['tf', 'terraform', 'tfvars']}
 let g:terraform_fmt_on_save = 1
 
+" YAML
+Plug 'nathanaelkane/vim-indent-guides', {'for': ['yaml', 'python']}
+
 " Python
 Plug 'scrooloose/syntastic', {'for': 'python'}
 Plug 'nvie/vim-flake8', {'for': 'python'}
@@ -58,7 +62,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'SirVer/ultisnips'
 
 call plug#end()
 
@@ -152,7 +155,7 @@ au FileType gitcommit setlocal tw=72
 au FileType sshconfig setlocal sw=4 ts=4 noet
 au FileType cfg setlocal sw=4 ts=4 et
 au FileType gitconfig setlocal sw=4 ts=4 noet
-au FileType yaml setlocal foldmethod=indent
+au FileType yaml setlocal foldmethod=indent sw=2 ts=2 et
 au FileType markdown setlocal tw=80
 au FileType mail setlocal tw=72 wrap nocp
 au BufRead,BufNewFile ~/.config/git/config* setlocal ft=gitconfig
