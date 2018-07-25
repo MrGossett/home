@@ -58,3 +58,6 @@ VirtualBox VMs/
 Mail/*
 .kr/*
 .offlineimap/*
+bin/*
+.nvm
+.vault-token*
