@@ -8,3 +8,4 @@
 accretion.* filter=git-crypt diff=git-crypt
 .ssh/config filter=git-crypt diff=git-crypt
 .bash/vault.sh filter=git-crypt diff=git-crypt
+.flyrc filter=git-crypt diff=git-crypt
