@@ -4,27 +4,27 @@
 
 # MS Excel
 # this will use the default xls spreadsheet handler from open
-application/x-msexcel; /Users/tgossett/.mutt/view_attachment.sh %s
-application/ms-exc; /Users/tgossett/.mutt/view_attachment.sh %s
-application/excel; /Users/tgossett/.mutt/view_attachment.sh %s
-application/msexcel; /Users/tgossett/.mutt/view_attachment.sh %s
-application/vnd.ms-exc; /Users/tgossett/.mutt/view_attachment.sh %s
-application/vnd.ms-excel; /Users/tgossett/.mutt/view_attachment.sh %s
+application/x-msexcel; ~/.mutt/view_attachment.sh %s
+application/ms-exc; ~/.mutt/view_attachment.sh %s
+application/excel; ~/.mutt/view_attachment.sh %s
+application/msexcel; ~/.mutt/view_attachment.sh %s
+application/vnd.ms-exc; ~/.mutt/view_attachment.sh %s
+application/vnd.ms-excel; ~/.mutt/view_attachment.sh %s
 
 # MS Word
-application/msword; /Users/tgossett/.mutt/view_attachment.sh %s
+application/msword; ~/.mutt/view_attachment.sh %s
 
 # Images
-image/jpeg; /Users/tgossett/.mutt/view_attachment.sh %s
-image/pjpeg; /Users/tgossett/.mutt/view_attachment.sh %s
-image/png; /Users/tgossett/.mutt/view_attachment.sh %s
-image/gif; /Users/tgossett/.mutt/view_attachment.sh %s
+image/jpeg; ~/.mutt/view_attachment.sh %s
+image/pjpeg; ~/.mutt/view_attachment.sh %s
+image/png; ~/.mutt/view_attachment.sh %s
+image/gif; ~/.mutt/view_attachment.sh %s
 
 # PDF
-application/pdf; /Users/tgossett/.mutt/view_attachment.sh %s pdf
+application/pdf; ~/.mutt/view_attachment.sh %s pdf
 
 # HTML
-text/html; /Users/tgossett/.mutt/view_attachment.sh %s html
+text/html; ~/.mutt/view_attachment.sh %s html
 
 # plaintext types
 text/plain; /usr/local/bin/vim
@@ -32,4 +32,4 @@ application/json; /usr/local/bin/vim
 application/javascript; /usr/local/bin/vim
 
 # Unidentified.
-application/octet-stream; /Users/tgossett/.mutt/view_attachment.sh %s "-"
+application/octet-stream; ~/.mutt/view_attachment.sh %s "-"
