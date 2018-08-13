@@ -15,7 +15,8 @@ code/
 .bash_history/*
 .lesshst
 .netrc
-.docker
+.docker/*
+!.docker/config.json
 .npm/*
 .gem
 .bash_sessions
@@ -63,3 +64,4 @@ bin/*
 .vault-token*
 .ipfs
 .mitmproxy
+.ecr
