@@ -11,6 +11,7 @@ cowsay
 dep
 diffutils
 docker
+docker-credential-helper-ecr
 docker-machine
 ed
 fetchmail
@@ -38,6 +39,7 @@ hub
 hydra
 imagemagick
 iperf3
+ipfs
 john
 jq
 kryptco/tap/kr
@@ -48,6 +50,7 @@ lzip
 m4
 make
 md5sha1sum
+mitmproxy
 monkeysphere
 mutt
 mysql
@@ -58,7 +61,6 @@ nghttp2
 nginx
 no-more-secrets
 node@8
-nvm
 offlineimap
 onepass
 openssh
