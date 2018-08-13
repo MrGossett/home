@@ -1,0 +1,27 @@
+# when the user is git, we're probably carrying git protocol over SSH
+Match User git
+	# git does its own compression, so don't re-compress
+	Compression no
+
+# BitBucket git repos
+Host bitbucket.org
+	# just in case
+	User git
+
+	# I don't want to wait forever
+	ConnectTimeout 60
+
+	# BitBucket can't handle my fancy TCP re-use stuff
+	ControlMaster no
+	ControlPath none
+
+# GitHub git repos
+Host github.com
+	# just in case
+	User git
+
+	# hold them to a higher standard
+	ConnectTimeout 5
+
+	# GitHub will drop the TCP connection after a few minutes
+	ControlPersist 5m

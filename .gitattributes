@@ -6,7 +6,7 @@
 .slack-term filter=git-crypt diff=git-crypt
 .oauth2smtprc filter=git-crypt diff=git-crypt
 accretion.* filter=git-crypt diff=git-crypt
-.ssh/config filter=git-crypt diff=git-crypt
 .bash/vault.sh filter=git-crypt diff=git-crypt
 .flyrc filter=git-crypt diff=git-crypt
 .docker/*  filter=git-crypt diff=git-crypt
+.config/ssh/red filter=git-crypt diff=git-crypt

@@ -43,6 +43,7 @@ node_modules
 .config/*
 !.config/brew.lock
 !.config/git/
+!.config/ssh/
 .node-gyp
 .pwntools-cache/
 .m2
