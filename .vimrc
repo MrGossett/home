@@ -159,6 +159,7 @@ au FileType yaml setlocal foldmethod=indent sw=2 ts=2 et
 au FileType markdown setlocal tw=80
 au FileType mail setlocal tw=72 wrap nocp
 au BufRead,BufNewFile ~/.config/git/config* setlocal ft=gitconfig
+au BufRead,BufNewFile ~/.config/ssh/* setlocal ft=sshconfig
 au BufRead,BufNewFile ~/.aws/config setlocal ft=cfg
 au BufRead,BufNewFile ~/.aws/credentials setlocal ft=cfg
 au BufRead,BufNewFile *.py setlocal ft=python
