@@ -29,3 +29,5 @@ function aws-env() {
 function aws-unset() {
   unset $(env | grep AWS | egrep -v '(PROFILE|REGION)' | cut -f 1 -d '=' | xargs)
 }
+
+export AWS_SDK_LOAD_CONFIG=true
