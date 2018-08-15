@@ -3,6 +3,6 @@ if [[ `uname` == 'Darwin' ]]; then
   if [[ ! -f "$HOME/Library/LaunchAgents/pbcopy.plist" ]]; then
     ln -s "$HOME/.tmux/pbcopy.plist" "$HOME/Library/LaunchAgents/pbcopy.plist"
   fi
-  launchctl load "$HOME/Library/LaunchAgents/pbcopy.plist"
-  launchctl start local.pbcopy
+  launchctl load "$HOME/Library/LaunchAgents/pbcopy.plist" 2>/dev/null && \
+    launchctl start local.pbcopy
 fi
