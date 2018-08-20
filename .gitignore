@@ -44,6 +44,7 @@ node_modules
 !.config/brew.lock
 !.config/git/
 !.config/ssh/
+!.config/geoip/
 .node-gyp
 .pwntools-cache/
 .m2
@@ -67,3 +68,4 @@ bin/*
 .mitmproxy
 .ecr
 .electron
+.geoip
