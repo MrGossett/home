@@ -3,6 +3,7 @@ aircrack-ng
 amazon-ecs-cli
 asciinema
 awscli
+awslogs
 base64
 bash
 cmake
