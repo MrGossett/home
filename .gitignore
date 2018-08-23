@@ -15,8 +15,8 @@ code/
 .bash_history/*
 .lesshst
 .netrc
-.docker/*
-!.docker/config.json
+.docker/machine/cache/*
+.docker/machine/machines/local/*
 .npm/*
 .gem
 .bash_sessions
