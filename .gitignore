@@ -69,3 +69,4 @@ bin/*
 .ecr
 .electron
 .geoip
+.password-store
