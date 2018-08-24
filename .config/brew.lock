@@ -30,7 +30,6 @@ gnu-indent
 gnu-sed
 gnu-tar
 gnu-which
-gnupg
 go-jira
 gpatch
 graphviz
@@ -68,6 +67,7 @@ onepass
 openssh
 openssl@1.1
 parallel
+pass
 pinentry-mac
 pip-completion
 pkg-config
@@ -86,7 +86,6 @@ stubby
 tcpdump
 the_silver_searcher
 tmux
-tree
 unzip
 vault
 vim
