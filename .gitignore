@@ -4,7 +4,8 @@ Movies
 Music
 Pictures
 Dropbox*
-Library
+Library/*
+!Library/LaunchAgents/*
 Documents
 Desktop
 Applications
