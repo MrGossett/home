@@ -167,6 +167,7 @@ au BufRead,BufNewFile *.py setlocal ft=python
 au BufRead,BufNewFile Terrafile setlocal ft=yaml
 au BufRead,BufNewFile *.yml setlocal ft=yaml
 au BufRead,BufNewFile *.muttrc,muttrc setlocal ft=muttrc
+au BufRead,BufNewFile .offlineimaprc setlocal ft=cfg
 
 " sane paste
 let &t_SI .= "\<Esc>[?2004h"
