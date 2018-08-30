@@ -10,6 +10,7 @@ application/excel; ~/.mutt/view_attachment.sh %s
 application/msexcel; ~/.mutt/view_attachment.sh %s
 application/vnd.ms-exc; ~/.mutt/view_attachment.sh %s
 application/vnd.ms-excel; ~/.mutt/view_attachment.sh %s
+application/ics; ~/.mutt/view_attachment.sh %s "-"
 
 # MS Word
 application/msword; ~/.mutt/view_attachment.sh %s
