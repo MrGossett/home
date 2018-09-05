@@ -1,0 +1,27 @@
+
+[Keyer]
+BeginPause = 2
+Speed = 10
+CharPause = 3
+StringPause = 7
+DotLength = 1
+LineLength = 3
+Tone = 900
+Device = default
+
+[Blocks]
+StringsNumber = 3
+StringLength = 5
+Skill = 65
+
+[Koch]
+Chars = kmrsuaptlowi.njef0y,vg5/q9zh38b?427c1d6x
+StringsNumber = 15
+StringLength = 2
+StartSpeed = 20
+Skill = 2
+Difficulty = 0
+
+[Qrz]
+CallFormat = @@@@@
+StringsNumber = 3
