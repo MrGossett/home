@@ -106,7 +106,6 @@ macro index \Cr      "<tag-prefix><clear-flag>N"               "mark tagged mess
 macro index <F1> '<sync-mailbox><enter-command>source ~/.mutt/accts/green.muttrc<enter><change-folder>!<enter>'
 macro index <F2> '<sync-mailbox><enter-command>source ~/.mutt/accts/red.muttrc<enter><change-folder>!<enter>'
 macro index <F3> '<sync-mailbox><enter-command>source ~/.mutt/accts/blue.muttrc<enter><change-folder>!<enter>'
-macro index <F4> '<sync-mailbox><enter-command>source ~/.mutt/accts/black.muttrc<enter><change-folder>!<enter>'
 
 macro compose \Cg    "Fgpg --clearsign\ny"
 macro compose \Cp    "Fgpg --clearsign\ny^T^Uapplication/pgp; format=text; x-action=sign\n"
