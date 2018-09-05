@@ -10,4 +10,5 @@ accretion.* filter=git-crypt diff=git-crypt
 .docker/**/*  filter=git-crypt diff=git-crypt
 .config/ssh/red filter=git-crypt diff=git-crypt
 .config/geoip/* filter=git-crypt diff=git-crypt
+.jira.d/* filter=git-crypt diff=git-crypt
 
