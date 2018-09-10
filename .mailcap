@@ -26,6 +26,7 @@ application/pdf; ~/.mutt/view_attachment.sh %s pdf
 
 # HTML
 text/html; ~/.mutt/view_attachment.sh %s html
+text/html; /usr/local/bin/html2text -style pretty %s; copiousoutput;
 
 # plaintext types
 text/plain; /usr/local/bin/vim
