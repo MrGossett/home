@@ -4,3 +4,5 @@
   export PATH="$PATH:/usr/local/sbin"
 [ -f /usr/local/etc/bash_completion ] && \
   . /usr/local/etc/bash_completion
+
+eval "$(jira --completion-script-bash)"
