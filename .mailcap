@@ -29,7 +29,7 @@ text/html; ~/.mutt/view_attachment.sh %s html
 text/html; /usr/local/bin/html2text -style pretty %s; copiousoutput;
 
 # plaintext types
-text/plain; /usr/local/bin/vim
+text/plain; /usr/local/bin/vim; copiousoutput;
 application/json; /usr/local/bin/vim
 application/javascript; /usr/local/bin/vim
 
