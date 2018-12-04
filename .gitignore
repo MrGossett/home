@@ -71,3 +71,7 @@ bin/*
 .electron
 .geoip
 .password-store
+.helm
+.kube
+.minikube
+.erlang.cookie
