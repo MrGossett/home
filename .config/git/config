@@ -56,10 +56,17 @@
 ; if the GIT_DIR has mrgossett in its path, include mrgossett config
 [includeIf "gitdir/i:mrgossett/"]
 	path = ~/.config/git/config.mrgossett
+[includeIf "gitdir/i:VerticalMeet/"]
+	path = ~/.config/git/config.mrgossett
 
 ; if the GIT_DIR has mlcloud in its path, include mlcloud config
 [includeIf "gitdir:mlcloud/"]
 	path = ~/.config/git/config.red
+[includeIf "gitdir:computes/"]
+	path = ~/.config/git/config.red
 
 [tag]
 	forceSignAnnotated = true
+
+[url "git@github.com:"]
+	insteadOf = https://github.com/
