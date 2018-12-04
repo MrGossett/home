@@ -16,26 +16,25 @@ Plug 'tmux-plugins/vim-tmux', {'for': 'tmux'}
 Plug 'edkolev/tmuxline.vim'
 
 " Golang
+Plug 'scrooloose/syntastic', {'for': 'go'}
+let g:syntastic_go_checkers = ['golangci_lint']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 Plug 'fatih/vim-go', {'for': 'go'}
-Plug 'Blackrush/vim-gocode', {'for': 'go'}
 Plug 'buoto/gotests-vim', {'for': 'go'}
 let g:go_fmt_command = "goimports"
-let g:go_metalinter_autosave = 1
-let g:go_metalinter_deadline = "10s"
-let g:go_metalinter_enabled = ['deadcode', 'errcheck', 'gas', 'goconst', 'gofmt', 'goimports', 'golint', 'gosimple',  'unconvert', 'varcheck', 'vet', 'vetshadow']
 let g:go_gocode_unimported_packages = 1
 let g:go_auto_type_info = 1
-let g:go_updatetime = 100
 let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_generate_tags = 1
-let g:go_highlight_string_spellcheck = 1
-let g:go_highlight_format_strings = 1
 let g:go_statusline_duration = "30s"
 let g:go_list_type = "quickfix"
 let g:go_test_show_name = 1
@@ -50,7 +49,6 @@ let g:terraform_fmt_on_save = 1
 Plug 'nathanaelkane/vim-indent-guides', {'for': ['yaml', 'python']}
 
 " Python
-Plug 'scrooloose/syntastic', {'for': 'python'}
 Plug 'nvie/vim-flake8', {'for': 'python'}
 let python_highlight_all=1
 
@@ -78,11 +76,6 @@ set foldlevelstart=20
 set spelllang=en_us                         " 'Merica!
 set dictionary+=/usr/share/dict/words       " use standard dictionary
 set spellfile=$HOME/.vim/my-words.utf-8.add " my (public) whitelist
-
-" pretty-print JSON
-function! JSONFmt()
-:%!python -m json.tool
-endfunction
 
 " Search down into subfolders. Provides tab-completion for all file-related tasks
 set path+=**
@@ -149,6 +142,7 @@ au Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 au Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
 au Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
 au Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+au FileType go setlocal sw=4 ts=4 noet
 au FileType tf,json setlocal sw=2 ts=2 et
 au FileType python setlocal sw=4 ts=4 et tw=79 softtabstop=4 autoindent fileformat=unix
 au FileType gitcommit setlocal tw=72
