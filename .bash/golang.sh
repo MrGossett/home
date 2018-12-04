@@ -8,3 +8,4 @@ export CDPATH="${CDPATH+$CDPATH:}${GOPATH//://src/bitbucket.org:}/src/bitbucket.
 export CDPATH="$CDPATH:${GOPATH//://src/github.com:}/src/github.com"
 
 export PATH="$PATH:$GOPATH/bin"
+export GO111MODULE=on
