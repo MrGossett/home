@@ -16,6 +16,7 @@ Plug 'tmux-plugins/vim-tmux', {'for': 'tmux'}
 Plug 'edkolev/tmuxline.vim'
 
 " Golang
+Plug 'godoctor/godoctor.vim', {'for': 'go'}
 Plug 'scrooloose/syntastic', {'for': 'go'}
 let g:syntastic_go_checkers = ['golangci_lint']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
