@@ -75,3 +75,8 @@ bin/*
 .kube
 .minikube
 .erlang.cookie
+.config/git/hooks/*
+.android
+.gradle
+.zoomus
+goroot
