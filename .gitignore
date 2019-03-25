@@ -80,3 +80,4 @@ bin/*
 .gradle
 .zoomus
 goroot
+.op
