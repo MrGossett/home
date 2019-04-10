@@ -81,3 +81,4 @@ bin/*
 .zoomus
 goroot
 .op
+.gist
