@@ -82,3 +82,6 @@ bin/*
 goroot
 .op
 .gist
+.psql_history
+Google\ Drive*
+.openvpn-connect.json
