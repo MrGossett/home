@@ -85,3 +85,4 @@ goroot
 .psql_history
 Google\ Drive*
 .openvpn-connect.json
+.aws/saml_cache.xml
