@@ -145,7 +145,7 @@ au Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
 au Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 au FileType go setlocal sw=4 ts=4 noet
 au FileType tf,json setlocal sw=2 ts=2 et
-au FileType python setlocal sw=4 ts=4 et tw=79 softtabstop=4 autoindent fileformat=unix
+au FileType python setlocal sw=4 ts=4 et softtabstop=4 autoindent fileformat=unix
 au FileType gitcommit setlocal tw=72
 au FileType sshconfig setlocal sw=4 ts=4 noet
 au FileType cfg setlocal sw=4 ts=4 et
