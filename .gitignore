@@ -86,3 +86,4 @@ goroot
 Google\ Drive*
 .openvpn-connect.json
 .aws/saml_cache.xml
+.vagrant.d
