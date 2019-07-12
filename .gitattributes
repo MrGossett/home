@@ -4,11 +4,7 @@
 .mutt/accts/*.muttrc  filter=git-crypt diff=git-crypt
 .offlineimaprc  filter=git-crypt diff=git-crypt
 .oauth2smtprc filter=git-crypt diff=git-crypt
-accretion.* filter=git-crypt diff=git-crypt
-.bash/vault.sh filter=git-crypt diff=git-crypt
-.flyrc filter=git-crypt diff=git-crypt
 .docker/**/*  filter=git-crypt diff=git-crypt
 .config/ssh/green filter=git-crypt diff=git-crypt
 .config/geoip/* filter=git-crypt diff=git-crypt
-.jira.d/* filter=git-crypt diff=git-crypt
 
