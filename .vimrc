@@ -41,6 +41,9 @@ let g:go_list_type = "quickfix"
 let g:go_test_show_name = 1
 let g:go_fold_enable = ['block', 'import', 'varconst', 'package_comment', 'comment']
 
+" GraphQL
+Plug 'jparise/vim-graphql'
+
 " Terraform
 Plug 'hashivim/vim-terraform', {'for': ['tf', 'terraform', 'tfvars']}
 Plug 'juliosueiras/vim-terraform-completion', {'for': ['tf', 'terraform', 'tfvars']}
