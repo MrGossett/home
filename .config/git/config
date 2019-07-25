@@ -59,11 +59,9 @@
 [includeIf "gitdir/i:VerticalMeet/"]
 	path = ~/.config/git/config.mrgossett
 
-; if the GIT_DIR has mlcloud in its path, include mlcloud config
-[includeIf "gitdir:mlcloud/"]
-	path = ~/.config/git/config.red
-[includeIf "gitdir:computes/"]
-	path = ~/.config/git/config.red
+; if the GIT_DIR has bellhops in its path, include bellhops config
+[includeIf "gitdir:bellhops/"]
+	path = ~/.config/git/config.green
 
 [tag]
 	forceSignAnnotated = true
