@@ -87,3 +87,7 @@ Google\ Drive*
 .openvpn-connect.json
 .aws/saml_cache.xml
 .vagrant.d
+.spark
+.aws/saml_cache*
+.bzr.log
+.dbt

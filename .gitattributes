@@ -4,5 +4,5 @@
 .config/ssh/green* filter=git-crypt diff=git-crypt
 .config/geoip/* filter=git-crypt diff=git-crypt
 .circleci/* filter=git-crypt diff=git-crypt
-.oauth2l/* filter=git-crypt diff=git-crypt
+.oauth2l filter=git-crypt diff=git-crypt
 
