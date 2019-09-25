@@ -2,6 +2,7 @@
 call plug#begin('~/.vim/plugged')
 
 " chrome
+Plug 'ahw/vim-pbcopy'
 Plug 'roman/golden-ratio'
 Plug 'flazz/vim-colorschemes'
 Plug 'vim-airline/vim-airline'
@@ -28,6 +29,7 @@ let g:syntastic_check_on_wq = 0
 Plug 'fatih/vim-go', {'for': 'go'}
 Plug 'buoto/gotests-vim', {'for': 'go'}
 let g:go_fmt_command = "goimports"
+let g:go_metalinter_command = "golangci-lint run"
 let g:go_gocode_unimported_packages = 1
 let g:go_auto_type_info = 1
 let g:go_highlight_functions = 1
@@ -43,6 +45,9 @@ let g:go_fold_enable = ['block', 'import', 'varconst', 'package_comment', 'comme
 
 " GraphQL
 Plug 'jparise/vim-graphql'
+
+" DBML
+Plug 'jidn/vim-dbml'
 
 " Terraform
 Plug 'hashivim/vim-terraform', {'for': ['tf', 'terraform', 'tfvars']}
@@ -116,12 +121,12 @@ match OverLength /\%81v.\+/
 " line numbers with styling
 hi CursorLineNr term=bold cterm=NONE ctermfg=LightGrey ctermbg=NONE
 hi LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE
-set number            " show line numbers
-set relativenumber    " make line numbers relative
-set cursorline        " highlight the cursor's line
-set laststatus=2      " always display a status line
-set smartcase         " case-insensitive search iff search pattern is all lowercase
-set clipboard=unnamed " use system pasteboard
+set number                " show line numbers
+set relativenumber        " make line numbers relative
+set cursorline            " highlight the cursor's line
+set laststatus=2          " always display a status line
+set smartcase             " case-insensitive search iff search pattern is all lowercase
+" set clipboard=unnamedplus " use system pasteboard
 
 let mapleader = ","
 " file types and indention
@@ -166,6 +171,7 @@ au BufRead,BufNewFile Terrafile setlocal ft=yaml
 au BufRead,BufNewFile *.yml setlocal ft=yaml
 au BufRead,BufNewFile *.muttrc,muttrc setlocal ft=muttrc
 au BufRead,BufNewFile .offlineimaprc setlocal ft=cfg
+au BufRead,BufNewFile *.tf,*.tf.ci setlocal ft=terraform
 
 " sane paste
 let &t_SI .= "\<Esc>[?2004h"
