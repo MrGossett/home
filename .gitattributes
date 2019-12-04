@@ -2,6 +2,8 @@
 .aws/config  filter=git-crypt diff=git-crypt
 .docker/**/*  filter=git-crypt diff=git-crypt
 .config/ssh/green* filter=git-crypt diff=git-crypt
+.config/ssh/grey* filter=git-crypt diff=git-crypt
+.config/git/*grey* filter=git-crypt diff=git-crypt
 .config/geoip/* filter=git-crypt diff=git-crypt
 .circleci/* filter=git-crypt diff=git-crypt
 .oauth2l filter=git-crypt diff=git-crypt

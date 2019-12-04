@@ -91,3 +91,4 @@ Google\ Drive*
 .aws/saml_cache*
 .bzr.log
 .dbt
+.circleci/update_check.yml

@@ -1,7 +1,7 @@
 [user]
 	name = Tim Gossett
 	signingkey = 0x7666BDAF!
-	email = tgossett@magicleap.com
+	email = tim@mrgossett.com
 
 [core]
 	editor = vim
@@ -56,12 +56,14 @@
 ; if the GIT_DIR has mrgossett in its path, include mrgossett config
 [includeIf "gitdir/i:mrgossett/"]
 	path = ~/.config/git/config.mrgossett
-[includeIf "gitdir/i:VerticalMeet/"]
-	path = ~/.config/git/config.mrgossett
 
 ; if the GIT_DIR has bellhops in its path, include bellhops config
 [includeIf "gitdir:bellhops/"]
 	path = ~/.config/git/config.green
+;
+; if the GIT_DIR has grey in its path, include grey config
+[includeIf "gitdir:grey/"]
+	path = ~/.config/git/config.grey
 
 [tag]
 	forceSignAnnotated = true

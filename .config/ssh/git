@@ -25,3 +25,4 @@ Host github.com
 
 	# GitHub will drop the TCP connection after a few minutes
 	ControlPersist 5m
+
