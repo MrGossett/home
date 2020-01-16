@@ -57,8 +57,8 @@
 [includeIf "gitdir/i:mrgossett/"]
 	path = ~/.config/git/config.mrgossett
 
-; if the GIT_DIR has bellhops in its path, include bellhops config
-[includeIf "gitdir:bellhops/"]
+; if the GIT_DIR has green in its path, include green config
+[includeIf "gitdir:green/"]
 	path = ~/.config/git/config.green
 ;
 ; if the GIT_DIR has grey in its path, include grey config
