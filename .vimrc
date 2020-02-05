@@ -3,7 +3,7 @@ call plug#begin('~/.vim/plugged')
 
 " chrome
 Plug 'ahw/vim-pbcopy'
-Plug 'roman/golden-ratio'
+" Plug 'roman/golden-ratio'
 Plug 'flazz/vim-colorschemes'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
