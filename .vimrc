@@ -29,7 +29,7 @@ let g:syntastic_check_on_wq = 0
 Plug 'fatih/vim-go', {'for': 'go'}
 Plug 'buoto/gotests-vim', {'for': 'go'}
 let g:go_fmt_command = "goimports"
-let g:go_metalinter_command = "golangci-lint run"
+let g:go_metalinter_command = "golangci-lint"
 let g:go_gocode_unimported_packages = 1
 let g:go_auto_type_info = 1
 let g:go_highlight_functions = 1
