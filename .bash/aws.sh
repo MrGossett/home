@@ -35,4 +35,19 @@ function aws-profile() {
   export AWS_PROFILE=$1 AWS_DEFAULT_PROFILE=$1
 }
 
+function aws-assume-creds() {
+  target=$1
+  arn=$(aws configure --profile $target get role_arn)
+  source=$(aws configure --profile $target get source_profile)
+  creds=$(aws sts --profile $source assume-role --role-arn $arn --role-session-name 'assume-creds')
+
+  profile="$target-config"
+  aws configure --profile $profile set region $(aws --profile $target configure get region)
+  aws configure --profile $profile set output $(aws --profile $target configure get output)
+  aws configure --profile $profile set aws_access_key_id $(echo $creds | jq -r '.Credentials.AccessKeyId')
+  aws configure --profile $profile set aws_secret_access_key $(echo $creds | jq -r '.Credentials.SecretAccessKey')
+  aws configure --profile $profile set aws_session_token $(echo $creds | jq -r '.Credentials.SessionToken')
+  aws configure --profile $profile set aws_session_expiration $(echo $creds | jq -r '.Credentials.Expiration')
+}
+
 export AWS_SDK_LOAD_CONFIG=true
