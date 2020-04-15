@@ -18,30 +18,57 @@ Plug 'edkolev/tmuxline.vim'
 
 " Golang
 Plug 'godoctor/godoctor.vim', {'for': 'go'}
-Plug 'scrooloose/syntastic', {'for': 'go'}
-let g:syntastic_go_checkers = ['golangci_lint']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" Plug 'vim-syntastic/syntastic'
+" let g:syntastic_go_checkers = ['golangci_lint']
+" let g:syntastic_go_golangci_lint_args = "--fix"
+" let g:syntastic_mode_map = { 'mode': 'passive' }
+" let g:syntastic_auto_loc_list = 0
+" let g:syntastic_check_on_open = 0
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_enable_signs = 1
 
 Plug 'fatih/vim-go', {'for': 'go'}
 Plug 'buoto/gotests-vim', {'for': 'go'}
-let g:go_fmt_command = "goimports"
-let g:go_metalinter_command = "golangci-lint"
-let g:go_gocode_unimported_packages = 1
+let g:go_gopls_enabled = 1
+let g:go_def_mode = "gopls"
+let g:go_info_mode = "gopls"
+let g:go_referrers_mode = "gopls"
+let g:go_rename_command = "gopls"
 let g:go_auto_type_info = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_function_calls = 1
-let g:go_highlight_methods = 1
+let g:go_fmt_command = "goimports"
+let g:go_fmt_fail_silently = 1
+let g:go_fold_enable = ["block", "import", "varconst", "package_comment", "comment"]
+let g:go_gocode_unimported_packages = 1
+let g:go_highlight_array_whitespace_error = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_chan_whitespace_error = 1
+let g:go_highlight_extra_types = 1
 let g:go_highlight_fields = 1
-let g:go_highlight_types = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_function_parameters = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_generate_tags = 1
+let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
-let g:go_statusline_duration = "30s"
+let g:go_highlight_space_tab_error = 1
+let g:go_highlight_trailing_whitespace_error = 1
+let g:go_highlight_types = 1
+let g:go_highlight_variable_assignments = 1
+let g:go_highlight_variable_declarations = 1
 let g:go_list_type = "quickfix"
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = []
+let g:go_metalinter_enabled = []
+let g:go_metalinter_command = "golangci-lint"
+let g:go_metalinter_deadline = "20s"
+let g:go_statusline_duration = "15s"
 let g:go_test_show_name = 1
-let g:go_fold_enable = ['block', 'import', 'varconst', 'package_comment', 'comment']
+
+" code completion
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+let g:deoplete#enable_at_startup = 1
 
 " GraphQL
 Plug 'jparise/vim-graphql'
@@ -77,9 +104,12 @@ set nocompatible
 
 " enable syntax and plugins
 syntax enable
+syntax sync minlines=256
 filetype plugin on
 set fdm=syntax
 set foldlevelstart=20
+set nocursorcolumn
+set re=1
 
 " Spelling
 set spelllang=en_us                         " 'Merica!
@@ -189,3 +219,6 @@ map <C-m> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
 
 colorscheme jellybeans
+
+" instruct deoplete to use omni completion for Go files
+call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
