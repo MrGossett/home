@@ -1,10 +1,13 @@
 .aws/credentials  filter=git-crypt diff=git-crypt
 .aws/config  filter=git-crypt diff=git-crypt
+.aws/workbench/datamodels/* filter=git-crypt diff=git-crypt
+.aws/*.lock  filter=git-crypt diff=git-crypt
 .docker/**/*  filter=git-crypt diff=git-crypt
-.config/ssh/green* filter=git-crypt diff=git-crypt
+.config/git/green* filter=git-crypt diff=git-crypt
 .config/ssh/grey* filter=git-crypt diff=git-crypt
+.config/git/*blue* filter=git-crypt diff=git-crypt
 .config/git/*grey* filter=git-crypt diff=git-crypt
 .config/geoip/* filter=git-crypt diff=git-crypt
 .circleci/* filter=git-crypt diff=git-crypt
 .oauth2l filter=git-crypt diff=git-crypt
-
+.databrickscfg filter=git-crypt diff=git-crypt

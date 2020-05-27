@@ -17,21 +17,13 @@ Plug 'tmux-plugins/vim-tmux', {'for': 'tmux'}
 Plug 'edkolev/tmuxline.vim'
 
 " Golang
-Plug 'godoctor/godoctor.vim', {'for': 'go'}
-" Plug 'vim-syntastic/syntastic'
-" let g:syntastic_go_checkers = ['golangci_lint']
-" let g:syntastic_go_golangci_lint_args = "--fix"
-" let g:syntastic_mode_map = { 'mode': 'passive' }
-" let g:syntastic_auto_loc_list = 0
-" let g:syntastic_check_on_open = 0
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_enable_signs = 1
 
 Plug 'fatih/vim-go', {'for': 'go'}
-Plug 'buoto/gotests-vim', {'for': 'go'}
 let g:go_gopls_enabled = 1
 let g:go_def_mode = "gopls"
 let g:go_info_mode = "gopls"
+let g:go_imports_mode = "gopls"
+let g:go_implements_mode = "gopls"
 let g:go_referrers_mode = "gopls"
 let g:go_rename_command = "gopls"
 let g:go_auto_type_info = 1
@@ -55,20 +47,15 @@ let g:go_highlight_trailing_whitespace_error = 1
 let g:go_highlight_types = 1
 let g:go_highlight_variable_assignments = 1
 let g:go_highlight_variable_declarations = 1
-let g:go_list_type = "quickfix"
-let g:go_metalinter_autosave = 1
-let g:go_metalinter_autosave_enabled = []
 let g:go_metalinter_enabled = []
 let g:go_metalinter_command = "golangci-lint"
-let g:go_metalinter_deadline = "20s"
+let g:go_metalinter_deadline = "60s"
 let g:go_statusline_duration = "15s"
 let g:go_test_show_name = 1
 
 " code completion
-Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
-let g:deoplete#enable_at_startup = 1
 
 " GraphQL
 Plug 'jparise/vim-graphql'
@@ -158,6 +145,10 @@ set laststatus=2          " always display a status line
 set smartcase             " case-insensitive search iff search pattern is all lowercase
 " set clipboard=unnamedplus " use system pasteboard
 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
 let mapleader = ","
 " file types and indention
 set sw=2 ts=2 et
@@ -177,6 +168,8 @@ au FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
+au FileType go nmap <Leader>l <Plug>(go-metalinter)
+au FileType go nmap <Leader>f :GoFmt
 au Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 au Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
 au Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
@@ -218,7 +211,4 @@ map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
 
-colorscheme jellybeans
-
-" instruct deoplete to use omni completion for Go files
-call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
+colorschem jellybeans

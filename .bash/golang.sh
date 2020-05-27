@@ -19,3 +19,5 @@ function godoc() {
     golang \
     bash -c "go get golang.org/x/tools/cmd/godoc && echo http://localhost:6060/pkg/$module && /tmp/go/bin/godoc -http=:6060"
 }
+
+source <(golangci-lint completion bash)

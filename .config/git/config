@@ -65,6 +65,10 @@
 [includeIf "gitdir:grey/"]
 	path = ~/.config/git/config.grey
 
+; if the GIT_DIR has blue in its path, include blue config
+[includeIf "gitdir:blue/"]
+	path = ~/.config/git/config.blue
+
 [tag]
 	forceSignAnnotated = true
 
