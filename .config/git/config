@@ -69,6 +69,10 @@
 [includeIf "gitdir:blue/"]
 	path = ~/.config/git/config.blue
 
+; if the GIT_DIR has indigo in its path, include indigo config
+[includeIf "gitdir:indigo/"]
+	path = ~/.config/git/config.indigo
+
 [tag]
 	forceSignAnnotated = true
 
