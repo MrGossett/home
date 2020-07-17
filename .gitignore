@@ -100,3 +100,5 @@ Google\ Drive*
 .aws/*.lock
 .aws/workbench/*.log
 .dlv/*history
+.cocoapods
+.docker/config.json
