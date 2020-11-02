@@ -5,9 +5,11 @@
 .docker/**/*  filter=git-crypt diff=git-crypt
 .config/git/green* filter=git-crypt diff=git-crypt
 .config/ssh/grey* filter=git-crypt diff=git-crypt
+.config/ssh/violet* filter=git-crypt diff=git-crypt
 .config/git/*blue* filter=git-crypt diff=git-crypt
 .config/git/*indigo* filter=git-crypt diff=git-crypt
 .config/git/*grey* filter=git-crypt diff=git-crypt
+.config/git/*violet* filter=git-crypt diff=git-crypt
 .config/geoip/* filter=git-crypt diff=git-crypt
 .circleci/* filter=git-crypt diff=git-crypt
 .oauth2l filter=git-crypt diff=git-crypt

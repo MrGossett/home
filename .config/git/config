@@ -73,6 +73,10 @@
 [includeIf "gitdir:indigo/"]
 	path = ~/.config/git/config.indigo
 
+; if the GIT_DIR has violet in its path, include violet config
+[includeIf "gitdir:violet/"]
+	path = ~/.config/git/config.violet
+
 [tag]
 	forceSignAnnotated = true
 
@@ -85,3 +89,7 @@
 	required = true
 [push]
 	default = current
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main
