@@ -73,7 +73,7 @@ prompt_command() {
     slug=${slug#ssh://}
     slug=${slug#https://}
     slug=${slug#git@}
-    slug=${slug#github.com}
+    slug=${slug#*github.com}
     slug=${slug#bitbucket.org}
     slug=${slug#:}
     slug=${slug#/}
