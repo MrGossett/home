@@ -14,4 +14,3 @@ alias v="vim"
 alias l='ls -FGAlh'
 
 export PATH="$HOME/bin:$PATH"
-complete -C $HOME/go/bin/gocomplete go
