@@ -102,3 +102,4 @@ Google\ Drive*
 .dlv/*history
 .cocoapods
 .docker/config.json
+.cache
