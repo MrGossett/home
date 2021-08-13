@@ -18,6 +18,9 @@ code/
 .netrc
 .docker/machine/cache/*
 .docker/machine/machines/local/*
+.docker/application-template
+.docker/scan
+.docker/config.json
 .npm/*
 .gem
 .bash_sessions
@@ -46,6 +49,7 @@ node_modules
 !.config/git/
 !.config/ssh/
 !.config/geoip/
+!.config/zsh/
 .node-gyp
 .pwntools-cache/
 .m2
@@ -93,6 +97,7 @@ Google\ Drive*
 .dbt
 .circleci/update_check.yml
 .amplify
+<<<<<<< HEAD
 .cache/act
 .postgresql/*
 .local/share/heroku/*
@@ -103,3 +108,7 @@ Google\ Drive*
 .cocoapods
 .docker/config.json
 .cache
+=======
+.zsh_history
+.zcompdump
+>>>>>>> e00ac8e (moving to zsh; been a while)

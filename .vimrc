@@ -17,7 +17,7 @@ Plug 'tmux-plugins/vim-tmux', {'for': 'tmux'}
 Plug 'edkolev/tmuxline.vim'
 
 " Golang
-
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'fatih/vim-go', {'for': 'go'}
 let g:go_gopls_enabled = 1
 let g:go_def_mode = "gopls"
@@ -57,11 +57,9 @@ let g:go_test_show_name = 1
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 
-" GraphQL
-Plug 'jparise/vim-graphql'
-
-" DBML
-Plug 'jidn/vim-dbml'
+" IDLs
+Plug 'hsanson/vim-openapi'
+Plug 'jasdel/vim-smithy'
 
 " Terraform
 Plug 'hashivim/vim-terraform', {'for': ['tf', 'terraform', 'tfvars']}
@@ -101,7 +99,7 @@ set re=1
 " Spelling
 set spelllang=en_us                         " 'Merica!
 set dictionary+=/usr/share/dict/words       " use standard dictionary
-set spellfile=$HOME/.vim/my-words.utf-8.add " my (public) whitelist
+set spellfile=$HOME/.vim/my-words.utf-8.add " my (public) allowlist
 
 " Search down into subfolders. Provides tab-completion for all file-related tasks
 set path+=**
@@ -154,6 +152,7 @@ let mapleader = ","
 set sw=2 ts=2 et
 au FileType dockerfile,go setlocal sw=8 ts=8 noet tw=80
 au FileType go setlocal autowrite
+
 " run :GoBuild or :GoTestCompile based on the go file
 function! s:build_go_files()
   let l:file = expand('%')
@@ -170,6 +169,7 @@ au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
 au FileType go nmap <Leader>l <Plug>(go-metalinter)
 au FileType go nmap <Leader>f :GoFmt
+au FileType go nmap <Leader>i :GoImports
 au Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 au Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
 au Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
@@ -190,11 +190,13 @@ au BufRead,BufNewFile ~/.aws/alias setlocal ft=gitconfig foldmethod=indent
 au BufRead,BufNewFile ~/.aws/config setlocal ft=cfg
 au BufRead,BufNewFile ~/.aws/credentials setlocal ft=cfg
 au BufRead,BufNewFile *.py setlocal ft=python
-au BufRead,BufNewFile Terrafile setlocal ft=yaml
 au BufRead,BufNewFile *.yml setlocal ft=yaml
-au BufRead,BufNewFile *.muttrc,muttrc setlocal ft=muttrc
-au BufRead,BufNewFile .offlineimaprc setlocal ft=cfg
-au BufRead,BufNewFile *.tf,*.tf.ci setlocal ft=terraform
+au BufRead,BufNewFile *.tf,*.tfvars setlocal ft=terraform
+au BufRead,BufNewFile *.tmux setlocal ft=tmux
+autocmd ColorScheme * highlight CocErrorFloat guifg=#ffffff
+autocmd ColorScheme * highlight CocInfoFloat guifg=#ffffff
+autocmd ColorScheme * highlight CocWarningFloat guifg=#ffffff
+autocmd ColorScheme * highlight SignColumn guibg=#adadad
 
 " sane paste
 let &t_SI .= "\<Esc>[?2004h"

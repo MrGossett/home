@@ -1,12 +1,13 @@
-" Save buffer's current syntax
-let s:bcs = b:current_syntax
+" safe b:current_syntax to restore it afterwards
+" Value could be 'sh', 'posix', 'ksh' or 'bash'
+let s:cs_safe = b:current_syntax
+
+" unlet b:current_syntax, so json.vim will load
 unlet b:current_syntax
+syntax include @JSON syntax/json.vim
 
-" Magic happens here.
-syntax include @RUBY syntax/ruby.vim
+" restore saved syntax
+let b:current_syntax = s:cs_safe
 
-" Restore buffer's current syntax
-let b:current_syntax = s:bcs
-
-" Match shell heredoc formats
-syntax region shellRuby matchgroup=Statement start=+<<-\?RUBY+ end=+^\s*RUBY$+ contains=@RUBY
+syn region shHereDoc matchgroup=shHereDocJSON start="<<\s*\\\=\z(JSON\)" matchgroup=shHereDocJSON end="^\z1\s*$"   contains=@JSON
+hi def link shHereDocSql        shRedir

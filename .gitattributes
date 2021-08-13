@@ -3,6 +3,7 @@
 .aws/workbench/datamodels/* filter=git-crypt diff=git-crypt
 .aws/*.lock  filter=git-crypt diff=git-crypt
 .docker/**/*  filter=git-crypt diff=git-crypt
+<<<<<<< HEAD
 .config/git/green* filter=git-crypt diff=git-crypt
 .config/ssh/grey* filter=git-crypt diff=git-crypt
 .config/ssh/violet* filter=git-crypt diff=git-crypt
@@ -10,6 +11,14 @@
 .config/git/*indigo* filter=git-crypt diff=git-crypt
 .config/git/*grey* filter=git-crypt diff=git-crypt
 .config/git/*violet* filter=git-crypt diff=git-crypt
+=======
+.config/**/*green* filter=git-crypt diff=git-crypt
+.config/**/*grey* filter=git-crypt diff=git-crypt
+.config/**/*red* filter=git-crypt diff=git-crypt
+.config/**/*blue* filter=git-crypt diff=git-crypt
+.config/**/*yellow* filter=git-crypt diff=git-crypt
+.config/**/*violet* filter=git-crypt diff=git-crypt
+>>>>>>> e00ac8e (moving to zsh; been a while)
 .config/geoip/* filter=git-crypt diff=git-crypt
 .circleci/* filter=git-crypt diff=git-crypt
 .oauth2l filter=git-crypt diff=git-crypt
